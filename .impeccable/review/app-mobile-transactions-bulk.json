@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-transactions-bulk.png",
+  "dimensions": "780x1688",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 2, no clip) of the served transactions index (scrolled to the record list with the first row selected) at http://127.0.0.1:8000/transactions as the signed-in user mira on a 390x844 mobile viewport (dpr 2) - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile bulk-selection evidence for the Enhanced UX pass: a checked row beside the fixed bottom bulk bar (1 selected, Select all 15 on this page, Clear selection, Delete selected); no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 2,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

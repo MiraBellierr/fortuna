@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Money In, Money Out — Fortuna reports sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body { background: #FFFFFF; color: #0F172A; font: 400 14px/1.6 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #64748B; }
+  .tbar { height: 64px; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+  .wordmark { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+  .shell { display: flex; height: 836px; }
+  .rail { width: 240px; border-right: 1px solid #E2E8F0; padding: 16px 12px; display: flex; flex-direction: column; }
+  .rail a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #64748B; }
+  .rail a.on { background: #EFF6FF; color: #1D4ED8; }
+  .rail .foot { margin-top: auto; border-top: 1px solid #F1F5F9; padding: 16px 8px 4px; display: flex; align-items: center; gap: 10px; }
+  .mono { width: 32px; height: 32px; border-radius: 8px; background: #F8FAFC; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #334155; }
+  .who { font-size: 13px; font-weight: 500; }
+  .main { flex: 1; min-width: 0; padding: 44px 24px 0; }
+  .wrap { max-width: 1152px; margin: 0 auto; }
+  .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+  .deck { margin-top: 6px; font-size: 14px; color: #64748B; }
+  .year { display: flex; flex-direction: column; gap: 6px; }
+  .year .lab { font-size: 13px; font-weight: 500; color: #334155; }
+  .year .select { border: 1px solid #E2E8F0; border-radius: 8px; padding: 9px 12px; font-size: 14px; }
+  .figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; }
+  .fv { margin-top: 10px; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; }
+  .fv .cur { margin-right: 6px; font-size: 13px; font-weight: 500; color: #64748B; }
+  .note { margin-top: 8px; font-size: 13px; color: #64748B; }
+  .sheet { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; }
+  .kept { margin-top: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 20px; }
+  .kept .fv { margin-top: 8px; }
+  .kept .right { text-align: right; }
+  .kept .big { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .cap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #F1F5F9; }
+  .cap h2 { font-size: 15px; font-weight: 600; }
+  .cap .meta { font-size: 13px; color: #64748B; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 104px; padding: 20px 20px 0; }
+  .bars i { flex: 1; height: 100%; display: flex; align-items: flex-end; }
+  .bars i b { display: block; width: 100%; background: #15803D; }
+  .out .bars i b { background: #2563EB; }
+  .bars i.void b { background: #F1F5F9; height: 3px; }
+  .cat { padding: 12px 20px; border-top: 1px solid #F1F5F9; }
+  .cat .row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .cat .row .nm { font-size: 14px; font-weight: 500; }
+  .cat .row .am { font-size: 14px; color: #64748B; }
+  .cat .pct { margin-top: 2px; font-size: 12.5px; color: #64748B; }
+  .meter { height: 6px; border-radius: 999px; background: #F1F5F9; margin-top: 8px; overflow: hidden; }
+  .meter i { display: block; height: 100%; border-radius: 999px; background: #15803D; }
+  .out .meter i { background: #2563EB; }
+</style>
+</head>
+<body>
+  <header class="tbar">
+    <span class="wordmark">Fortuna</span>
+    <span class="label tnum">Oct 17, 2026</span>
+  </header>
+  <div class="shell">
+    <aside class="rail" aria-label="Primary">
+      <a href="#">Dashboard</a>
+      <a href="#">Transactions</a>
+      <a href="#">Budgets</a>
+      <a href="#" class="on" aria-current="page">Reports</a>
+      <a href="#">Categories</a>
+      <div class="foot">
+        <span class="mono">A</span>
+        <span class="who">Aina Rahman</span>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h1>Reports</h1>
+            <p class="deck">The year 2026 split in halves: what came in, what went out, what stayed.</p>
+          </div>
+          <div class="year">
+            <span class="lab">Year</span>
+            <span class="select tnum">2026</span>
+          </div>
+        </div>
+
+        <section class="figs" aria-label="Figures for 2026">
+          <div class="card">
+            <p class="label">Total income</p>
+            <p class="fv tnum"><span class="cur">MYR</span>96,400.00</p>
+            <p class="note">Everything earned in 2026.</p>
+          </div>
+          <div class="card">
+            <p class="label">Total spent</p>
+            <p class="fv tnum"><span class="cur">MYR</span>74,919.50</p>
+            <p class="note">Everything recorded as spent.</p>
+          </div>
+          <div class="card">
+            <p class="label">Net saved</p>
+            <p class="fv tnum"><span class="cur">MYR</span>21,480.50</p>
+            <p class="note">Income minus expenses for the year.</p>
+          </div>
+          <div class="card">
+            <p class="label">Savings rate</p>
+            <p class="fv tnum">22.3%</p>
+            <p class="note">The share of income kept in 2026.</p>
+          </div>
+        </section>
+
+        <section class="sheet kept" aria-label="Kept this year">
+          <div>
+            <p class="label">Kept this year</p>
+            <p class="fv tnum"><span class="cur">MYR</span>21,480.50</p>
+          </div>
+          <div class="right">
+            <p class="big tnum">22.3%</p>
+            <p class="note" style="margin-top:4px">of income kept</p>
+          </div>
+        </section>
+
+        <div class="two">
+          <section class="sheet" aria-label="Money in">
+            <div class="cap">
+              <h2>Money in</h2>
+              <span class="meta tnum">MYR 96,400.00</span>
+            </div>
+            <div class="bars" aria-hidden="true">
+              <i><b style="height:78%"></b></i>
+              <i><b style="height:82%"></b></i>
+              <i><b style="height:84%"></b></i>
+              <i><b style="height:100%"></b></i>
+              <i><b style="height:88%"></b></i>
+              <i><b style="height:94%"></b></i>
+              <i><b style="height:86%"></b></i>
+              <i><b style="height:90%"></b></i>
+              <i><b style="height:87%"></b></i>
+              <i><b style="height:95%"></b></i>
+              <i class="void"><b></b></i>
+              <i class="void"><b></b></i>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Salary</span><span class="am tnum">84,000.00 <span style="color:#CBD5E1">·</span> 87.1%</span></div>
+              <div class="meter"><i style="width:87.1%"></i></div>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Freelancing</span><span class="am tnum">9,400.00 <span style="color:#CBD5E1">·</span> 9.8%</span></div>
+              <div class="meter"><i style="width:9.8%"></i></div>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Investments</span><span class="am tnum">3,000.00 <span style="color:#CBD5E1">·</span> 3.1%</span></div>
+              <div class="meter"><i style="width:3.1%"></i></div>
+            </div>
+          </section>
+
+          <section class="sheet out" aria-label="Money out">
+            <div class="cap">
+              <h2>Money out</h2>
+              <span class="meta tnum">MYR 74,919.50</span>
+            </div>
+            <div class="bars" aria-hidden="true">
+              <i><b style="height:38%"></b></i>
+              <i><b style="height:45%"></b></i>
+              <i><b style="height:43%"></b></i>
+              <i><b style="height:47%"></b></i>
+              <i><b style="height:41%"></b></i>
+              <i><b style="height:57%"></b></i>
+              <i><b style="height:43%"></b></i>
+              <i><b style="height:91%"></b></i>
+              <i><b style="height:45%"></b></i>
+              <i><b style="height:100%"></b></i>
+              <i class="void"><b></b></i>
+              <i class="void"><b></b></i>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Food</span><span class="am tnum">18,240.00 <span style="color:#CBD5E1">·</span> 24.3%</span></div>
+              <div class="meter"><i style="width:24.3%"></i></div>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Rent</span><span class="am tnum">16,800.00 <span style="color:#CBD5E1">·</span> 22.4%</span></div>
+              <div class="meter"><i style="width:22.4%"></i></div>
+            </div>
+            <div class="cat">
+              <div class="row"><span class="nm">Shopping</span><span class="am tnum">15,120.00 <span style="color:#CBD5E1">·</span> 20.2%</span></div>
+              <div class="meter"><i style="width:20.2%"></i></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

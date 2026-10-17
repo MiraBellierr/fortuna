@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-transactions-selected.png",
+  "dimensions": "1440x900",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the served transactions index (top) at http://127.0.0.1:8000/transactions as the signed-in user mira with the More filters disclosure expanded and one row selected - Vite dev server, Chrome via browser-harness daemon (CDP). Bulk-selection evidence for the Enhanced UX pass: expanded advanced filters (From date, To date, Minimum amount, Maximum amount), indeterminate master checkbox, and the in-sheet bulk band (1 selected, Select all 15 on this page, Clear selection, Delete selected); no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

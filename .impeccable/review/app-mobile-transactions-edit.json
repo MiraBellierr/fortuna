@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-transactions-edit.png",
+  "dimensions": "780x1688",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 2, no clip) of the served edit-entry sheet (transactions index with ?edit=566, the Groceries entry) at http://127.0.0.1:8000/transactions as the signed-in user mira on a 390x844 mobile viewport (dpr 2) - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile edit-entry evidence for the Enhanced UX pass: populated fields (Groceries, 231, 16/10/2026, Weekly Groceries), View current receipt link, full-bleed Save changes, and the Cancel / receipt-note foot; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 2,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

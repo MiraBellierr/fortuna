@@ -1,0 +1,42 @@
+{
+  "title": "Lock the reports composition",
+  "question": "The world is settled — the signed-in register in Swiss Minimal Light. Three structures for the Advanced Reports page: a year-scoped, detailed monthly and yearly analysis in MYR. Lock the one to build; use steer for changes.",
+  "options": [
+    {
+      "id": "delta-board",
+      "kind": "assigned",
+      "label": "The Delta Board",
+      "kicker": "THE ROLL",
+      "thesis": "The year read as movement: every headline figure carries its change against last year, and the year-by-year matrix is the second thing on the page.",
+      "palette": ["#FFFFFF", "#F8FAFC", "#E2E8F0", "#2563EB", "#15803D", "#DC2626"],
+      "materials": ["delta flags", "tabular numerals", "ruled comparison matrix"],
+      "viewport": "Page head with the year select; four figure cards whose notes carry signed movement against 2025; below, the year-by-year sheet with the selected year's row tinted blue and the monthly flow chart starting under the fold.",
+      "risk": "Movement reads empty on a first year of data — the delta notes must degrade honestly to \"no prior year\".",
+      "html": ".impeccable/mocks/decision/delta-board.html"
+    },
+    {
+      "id": "money-in-out",
+      "kind": "dealt",
+      "label": "Money In, Money Out",
+      "thesis": "The year split in half: what came in and what went out as mirrored columns, with what was kept as the strip between them.",
+      "palette": ["#FFFFFF", "#F8FAFC", "#E2E8F0", "#15803D", "#2563EB", "#64748B"],
+      "materials": ["mirrored sheets", "direction bars", "share meters"],
+      "viewport": "Four figure cards, then a kept strip stating the year's net; below it, 'Money in' and 'Money out' as mirrored sheets — each with twelve direction bars and its category shares — beginning the month table under the fold.",
+      "risk": "Two mirrored columns at 1152px squeeze the category rows; each half must earn its width or merge at narrow sizes.",
+      "html": ".impeccable/mocks/decision/money-in-out.html"
+    },
+    {
+      "id": "working-register",
+      "kind": "dealt",
+      "label": "The Working Register",
+      "thesis": "The dashboard's composition continued for the year: server-rendered figures, the monthly flow chart as the centrepiece, then the twelve-month ledger and the category sheets.",
+      "palette": ["#FFFFFF", "#F8FAFC", "#E2E8F0", "#94A3B8", "#2563EB", "#64748B"],
+      "materials": ["ApexCharts flow", "ruled twelve-month ledger", "category meters"],
+      "viewport": "Four figure cards, then the full-width flow chart sheet — income and spend columns under a dashed net line — with the twelve-month ledger beginning under the fold.",
+      "risk": "Closest to the dashboard; the ledger table and category sheets must carry the depth the dashboard never had.",
+      "html": ".impeccable/mocks/decision/working-register.html"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "steer": true
+}

@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-transactions.png",
+  "dimensions": "1440x900",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the served transactions index (top) at http://127.0.0.1:8000/transactions as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Search and advanced-filter evidence for the Enhanced UX pass (sheet at rest: Search, Type, Category, More filters collapsed, Order, Apply, then the records cap and table rows); no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

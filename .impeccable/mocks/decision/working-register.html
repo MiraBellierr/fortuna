@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>The Working Register — Fortuna reports sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body { background: #FFFFFF; color: #0F172A; font: 400 14px/1.6 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #64748B; }
+  .tbar { height: 64px; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+  .wordmark { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+  .shell { display: flex; height: 836px; }
+  .rail { width: 240px; border-right: 1px solid #E2E8F0; padding: 16px 12px; display: flex; flex-direction: column; }
+  .rail a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #64748B; }
+  .rail a.on { background: #EFF6FF; color: #1D4ED8; }
+  .rail .foot { margin-top: auto; border-top: 1px solid #F1F5F9; padding: 16px 8px 4px; display: flex; align-items: center; gap: 10px; }
+  .mono { width: 32px; height: 32px; border-radius: 8px; background: #F8FAFC; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #334155; }
+  .who { font-size: 13px; font-weight: 500; }
+  .main { flex: 1; min-width: 0; padding: 44px 24px 0; }
+  .wrap { max-width: 1152px; margin: 0 auto; }
+  .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+  .deck { margin-top: 6px; font-size: 14px; color: #64748B; }
+  .year { display: flex; flex-direction: column; gap: 6px; }
+  .year .lab { font-size: 13px; font-weight: 500; color: #334155; }
+  .year .select { border: 1px solid #E2E8F0; border-radius: 8px; padding: 9px 12px; font-size: 14px; }
+  .figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; }
+  .fv { margin-top: 10px; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; }
+  .fv .cur { margin-right: 6px; font-size: 13px; font-weight: 500; color: #64748B; }
+  .note { margin-top: 8px; font-size: 13px; color: #64748B; }
+  .sheet { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; margin-top: 32px; }
+  .cap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #F1F5F9; }
+  .cap h2 { font-size: 15px; font-weight: 600; }
+  .cap .meta { font-size: 13px; color: #64748B; }
+  .legend { display: flex; gap: 18px; padding: 16px 20px 0; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; color: #334155; }
+  .legend i { width: 10px; height: 10px; border-radius: 999px; display: inline-block; }
+  .lg-inc { background: #94A3B8; }
+  .lg-exp { background: #2563EB; }
+  .lg-net { background: transparent; border-top: 2px dashed #64748B; border-radius: 0; width: 14px; height: 0; }
+  .plot { padding: 0 20px; }
+  .months { display: flex; padding: 6px 20px 16px; }
+  .months span { flex: 1; text-align: center; font-size: 12px; color: #64748B; }
+  .months span.void { color: #94A3B8; }
+  .tcap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+  .tcap h2 { font-size: 15px; font-weight: 600; }
+  .tcap .meta { font-size: 13px; color: #64748B; }
+</style>
+</head>
+<body>
+  <header class="tbar">
+    <span class="wordmark">Fortuna</span>
+    <span class="label tnum">Oct 17, 2026</span>
+  </header>
+  <div class="shell">
+    <aside class="rail" aria-label="Primary">
+      <a href="#">Dashboard</a>
+      <a href="#">Transactions</a>
+      <a href="#">Budgets</a>
+      <a href="#" class="on" aria-current="page">Reports</a>
+      <a href="#">Categories</a>
+      <div class="foot">
+        <span class="mono">A</span>
+        <span class="who">Aina Rahman</span>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h1>Reports</h1>
+            <p class="deck">The year 2026, month by month, in one register.</p>
+          </div>
+          <div class="year">
+            <span class="lab">Year</span>
+            <span class="select tnum">2026</span>
+          </div>
+        </div>
+
+        <section class="figs" aria-label="Figures for 2026">
+          <div class="card">
+            <p class="label">Total income</p>
+            <p class="fv tnum"><span class="cur">MYR</span>96,400.00</p>
+            <p class="note">Everything earned in 2026.</p>
+          </div>
+          <div class="card">
+            <p class="label">Total spent</p>
+            <p class="fv tnum"><span class="cur">MYR</span>74,919.50</p>
+            <p class="note">Everything recorded as spent.</p>
+          </div>
+          <div class="card">
+            <p class="label">Net saved</p>
+            <p class="fv tnum"><span class="cur">MYR</span>21,480.50</p>
+            <p class="note">Income minus expenses for the year.</p>
+          </div>
+          <div class="card">
+            <p class="label">Savings rate</p>
+            <p class="fv tnum">22.3%</p>
+            <p class="note">The share of income kept in 2026.</p>
+          </div>
+        </section>
+
+        <section class="sheet" aria-label="The year in months">
+          <div class="cap">
+            <h2>The year in months</h2>
+            <span class="meta tnum">2026</span>
+          </div>
+          <div class="legend" aria-hidden="true">
+            <span><i class="lg-inc"></i>Income</span>
+            <span><i class="lg-exp"></i>Spend</span>
+            <span><i class="lg-net"></i>Net</span>
+          </div>
+          <div class="plot">
+            <svg viewBox="0 0 1112 330" style="display:block;width:100%;height:330px" role="img" aria-label="Income and spend by month, with the net line">
+              <line x1="0" y1="250" x2="1112" y2="250" stroke="#E2E8F0" stroke-width="1"></line>
+              <line x1="0" y1="60" x2="1112" y2="60" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="4 4"></line>
+              <g fill="#94A3B8">
+                <rect x="26.3" y="131" width="18" height="119"></rect>
+                <rect x="118.9" y="124" width="18" height="126"></rect>
+                <rect x="211.6" y="121" width="18" height="129"></rect>
+                <rect x="304.2" y="96" width="18" height="154"></rect>
+                <rect x="396.9" y="115" width="18" height="135"></rect>
+                <rect x="489.5" y="106" width="18" height="144"></rect>
+                <rect x="582.2" y="118" width="18" height="132"></rect>
+                <rect x="674.8" y="112" width="18" height="138"></rect>
+                <rect x="767.4" y="117" width="18" height="133"></rect>
+                <rect x="860.1" y="104" width="18" height="146"></rect>
+              </g>
+              <g fill="#2563EB">
+                <rect x="48.3" y="168" width="18" height="82"></rect>
+                <rect x="140.9" y="154" width="18" height="96"></rect>
+                <rect x="233.6" y="159" width="18" height="91"></rect>
+                <rect x="326.2" y="150" width="18" height="100"></rect>
+                <rect x="418.9" y="162" width="18" height="88"></rect>
+                <rect x="511.5" y="128" width="18" height="122"></rect>
+                <rect x="604.2" y="157" width="18" height="93"></rect>
+                <rect x="696.8" y="55" width="18" height="195"></rect>
+                <rect x="789.4" y="154" width="18" height="96"></rect>
+                <rect x="882.1" y="36" width="18" height="214"></rect>
+              </g>
+              <polyline points="46.3,212.3 138.9,220.2 231.6,212.3 324.2,196.6 416.9,202.9 509.5,228 602.2,210.8 694.8,306.5 787.4,212.3 880.1,317.8" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="5 5"></polyline>
+            </svg>
+          </div>
+          <div class="months" aria-hidden="true">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+            <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span class="void">Nov</span><span class="void">Dec</span>
+          </div>
+        </section>
+
+        <section class="sheet" aria-label="The twelve months">
+          <div class="tcap">
+            <h2>The twelve months</h2>
+            <span class="meta tnum">2026</span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

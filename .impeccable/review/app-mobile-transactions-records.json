@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-transactions-records.png",
+  "dimensions": "780x1688",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 2, no clip) of the served transactions index (scrolled to the record list) at http://127.0.0.1:8000/transactions as the signed-in user mira on a 390x844 mobile viewport (dpr 2) - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile record-list evidence for the Enhanced UX pass: stacked rows with a row checkbox, date and amount on one line, category with color chip, description, and Edit/Delete actions; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 2,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

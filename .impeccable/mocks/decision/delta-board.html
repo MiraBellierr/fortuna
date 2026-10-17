@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>The Delta Board — Fortuna reports sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body { background: #FFFFFF; color: #0F172A; font: 400 14px/1.6 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #64748B; }
+  .tbar { height: 64px; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+  .wordmark { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+  .shell { display: flex; height: 836px; }
+  .rail { width: 240px; border-right: 1px solid #E2E8F0; padding: 16px 12px; display: flex; flex-direction: column; }
+  .rail a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #64748B; }
+  .rail a.on { background: #EFF6FF; color: #1D4ED8; }
+  .rail .foot { margin-top: auto; border-top: 1px solid #F1F5F9; padding: 16px 8px 4px; display: flex; align-items: center; gap: 10px; }
+  .mono { width: 32px; height: 32px; border-radius: 8px; background: #F8FAFC; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #334155; }
+  .who { font-size: 13px; font-weight: 500; }
+  .main { flex: 1; min-width: 0; padding: 44px 24px 0; }
+  .wrap { max-width: 1152px; margin: 0 auto; }
+  .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+  .deck { margin-top: 6px; font-size: 14px; color: #64748B; }
+  .year { display: flex; flex-direction: column; gap: 6px; }
+  .year .lab { font-size: 13px; font-weight: 500; color: #334155; }
+  .year .select { border: 1px solid #E2E8F0; border-radius: 8px; padding: 9px 12px; font-size: 14px; }
+  .figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; }
+  .fv { margin-top: 10px; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; }
+  .fv .cur { margin-right: 6px; font-size: 13px; font-weight: 500; color: #64748B; }
+  .note { margin-top: 8px; font-size: 13px; color: #64748B; }
+  .up { color: #15803D; font-weight: 500; }
+  .off { color: #DC2626; font-weight: 500; }
+  .sheet { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; margin-top: 32px; }
+  .cap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #F1F5F9; }
+  .cap h2 { font-size: 15px; font-weight: 600; }
+  .cap .meta { font-size: 13px; color: #64748B; }
+  table { width: 100%; border-collapse: collapse; }
+  th { padding: 10px 20px; background: #F8FAFC; border-bottom: 1px solid #E2E8F0; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #64748B; text-align: left; }
+  th.r, td.r { text-align: right; }
+  td { padding: 12px 20px; border-bottom: 1px solid #F1F5F9; font-size: 14px; }
+  td.yr { font-weight: 500; }
+  td.num { color: #334155; }
+  td.muted { color: #64748B; }
+  tr.sel td { background: #EFF6FF; }
+  tr.sel td.yr { color: #1D4ED8; font-weight: 600; }
+  tr.sel td.num { font-weight: 600; }
+  .plot { height: 150px; padding: 20px; display: flex; align-items: flex-end; gap: 24px; opacity: 0.9; }
+  .plot i { flex: 1; display: block; background: #94A3B8; border-radius: 2px 2px 0 0; }
+  .plot i.b { background: #2563EB; }
+</style>
+</head>
+<body>
+  <header class="tbar">
+    <span class="wordmark">Fortuna</span>
+    <span class="label tnum">Oct 17, 2026</span>
+  </header>
+  <div class="shell">
+    <aside class="rail" aria-label="Primary">
+      <a href="#">Dashboard</a>
+      <a href="#">Transactions</a>
+      <a href="#">Budgets</a>
+      <a href="#" class="on" aria-current="page">Reports</a>
+      <a href="#">Categories</a>
+      <div class="foot">
+        <span class="mono">A</span>
+        <span class="who">Aina Rahman</span>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h1>Reports</h1>
+            <p class="deck">The year 2026, month by month &mdash; and how it moved against 2025.</p>
+          </div>
+          <div class="year">
+            <span class="lab">Year</span>
+            <span class="select tnum">2026</span>
+          </div>
+        </div>
+
+        <section class="figs" aria-label="Figures for 2026">
+          <div class="card">
+            <p class="label">Total income</p>
+            <p class="fv tnum"><span class="cur">MYR</span>96,400.00</p>
+            <p class="note"><span class="up tnum">+8.7%</span> vs 2025</p>
+          </div>
+          <div class="card">
+            <p class="label">Total spent</p>
+            <p class="fv tnum"><span class="cur">MYR</span>74,919.50</p>
+            <p class="note"><span class="off tnum">+3.6%</span> vs 2025</p>
+          </div>
+          <div class="card">
+            <p class="label">Net saved</p>
+            <p class="fv tnum"><span class="cur">MYR</span>21,480.50</p>
+            <p class="note"><span class="up tnum">+31.5%</span> vs 2025</p>
+          </div>
+          <div class="card">
+            <p class="label">Savings rate</p>
+            <p class="fv tnum">22.3%</p>
+            <p class="note"><span class="up tnum">+3.9 pts</span> vs 2025</p>
+          </div>
+        </section>
+
+        <section class="sheet" aria-label="Year by year">
+          <div class="cap">
+            <h2>Year by year</h2>
+            <span class="meta tnum">Selected 2026</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th class="r">Income</th>
+                <th class="r">Spent</th>
+                <th class="r">Net saved</th>
+                <th class="r">Saved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="sel">
+                <td class="yr tnum">2026</td>
+                <td class="r num tnum">96,400.00</td>
+                <td class="r num tnum">74,919.50</td>
+                <td class="r num tnum">21,480.50</td>
+                <td class="r num tnum">22.3%</td>
+              </tr>
+              <tr>
+                <td class="yr tnum">2025</td>
+                <td class="r num tnum">88,650.00</td>
+                <td class="r num tnum">72,310.00</td>
+                <td class="r num tnum">16,340.00</td>
+                <td class="r num tnum">18.4%</td>
+              </tr>
+              <tr>
+                <td class="yr tnum">2024</td>
+                <td class="r num tnum">81,200.00</td>
+                <td class="r num tnum">69,880.00</td>
+                <td class="r num tnum">11,320.00</td>
+                <td class="r num tnum">13.9%</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="sheet" aria-label="The year in months">
+          <div class="cap">
+            <h2>The year in months</h2>
+            <span class="meta tnum">2026</span>
+          </div>
+          <div class="plot" aria-hidden="true">
+            <i style="height:62%"></i><i class="b" style="height:44%"></i>
+            <i style="height:66%"></i><i class="b" style="height:52%"></i>
+            <i style="height:68%"></i><i class="b" style="height:49%"></i>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

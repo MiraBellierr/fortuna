@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-reports-lower.png",
+  "dimensions": "1440x900",
+  "origin": "Document slice capture (CDP Page.captureScreenshot, captureBeyondViewport, clip 1440x900 CSS px at the twelve-month ledger) of the served reports page at http://127.0.0.1:8000/reports as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Lower-page evidence for the reports page finish review; no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

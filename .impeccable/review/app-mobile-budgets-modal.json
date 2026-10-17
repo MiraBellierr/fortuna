@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-budgets-modal.png",
+  "dimensions": "390x844",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the budgets page with the Set budget modal open (opened through the page own button handler) at http://127.0.0.1:8000/budgets as the signed-in user mira on a 390x844 mobile viewport - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile modal evidence for the signed-in app family finish review; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

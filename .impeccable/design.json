@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T12:00:00Z",
+  "title": "Design System: Fortuna · Master Your Money",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "#FAFAF8",
+        "tonalRamp": ["#2A2A28", "#4A4A48", "#6B6B69", "#8D8D8B", "#AFAFAD", "#D1D1CF", "#EBEBE9", "#FAFAF8"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#2C2C2C", "#4C4C4C", "#6E6E6E", "#909090", "#B2B2B2", "#D4D4D4", "#EDEDED", "#FFFFFF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111111",
+        "tonalRamp": ["#111111", "#2E2E2E", "#4B4B4B", "#686868", "#858585", "#A2A2A2", "#CFCFCF", "#F1F1F1"]
+      },
+      "ink-mid": {
+        "role": "neutral",
+        "displayName": "Info Gray",
+        "canonical": "#6E6E6E",
+        "tonalRamp": ["#1C1C1C", "#333333", "#4B4B4B", "#636363", "#6E6E6E", "#959595", "#C4C4C4", "#F0F0F0"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#E4E4E2",
+        "tonalRamp": ["#1E1E1E", "#383838", "#525252", "#6C6C6C", "#878787", "#B1B1AF", "#E4E4E2", "#F7F7F5"]
+      },
+      "hairline-inner": {
+        "role": "neutral",
+        "displayName": "Row Hairline",
+        "canonical": "#EFEFED",
+        "tonalRamp": ["#222220", "#3C3C3A", "#565654", "#70706E", "#8A8A88", "#B5B5B3", "#EFEFED", "#F9F9F7"]
+      },
+      "meter-track": {
+        "role": "neutral",
+        "displayName": "Meter Track",
+        "canonical": "#F0F0EE",
+        "tonalRamp": ["#232321", "#3D3D3B", "#575755", "#71716F", "#8B8B89", "#B6B6B4", "#F0F0EE", "#FAFAF8"]
+      },
+      "link-underline": {
+        "role": "neutral",
+        "displayName": "Underline Gray",
+        "canonical": "#C9C9C5",
+        "tonalRamp": ["#1F1F1F", "#393939", "#535351", "#6D6D6B", "#878785", "#B1B1AD", "#C9C9C5", "#F2F2EE"]
+      },
+      "scrollbar-thumb": {
+        "role": "neutral",
+        "displayName": "Scrollbar Thumb",
+        "canonical": "#D6D6D2",
+        "tonalRamp": ["#232321", "#3D3D3B", "#575755", "#71716F", "#8B8B89", "#D6D6D2", "#ECECE8", "#FAFAF8"],
+        "note": "Browser-chrome only (webkit scrollbar). Never render as a component surface."
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Fortuna Red",
+        "canonical": "#E3000F",
+        "tonalRamp": ["#3D0006", "#68000A", "#94000E", "#B8000C", "#E3000F", "#EC525C", "#F4A6AC", "#FCE3E5"]
+      },
+      "accent-press": {
+        "role": "primary",
+        "displayName": "Red Press",
+        "canonical": "#B8000C",
+        "tonalRamp": ["#2E0005", "#540108", "#7A000A", "#B8000C", "#D63F4A", "#E3737B", "#F0AEB3", "#FBE6E8"]
+      },
+      "app-ground": {
+        "role": "neutral",
+        "displayName": "Working White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#292929", "#4D4D4D", "#6E6E6E", "#8C8C8C", "#ABABAB", "#C7C7C7", "#E0E0E0", "#F2F2F2"]
+      },
+      "app-surface": {
+        "role": "neutral",
+        "displayName": "Panel Slate",
+        "canonical": "#F8FAFC",
+        "tonalRamp": ["#292929", "#4C4D4D", "#6D6E6F", "#8B8C8E", "#AAABAC", "#C6C7C9", "#DFE1E2", "#F1F3F4"]
+      },
+      "app-surface-strong": {
+        "role": "neutral",
+        "displayName": "Row Slate",
+        "canonical": "#F1F5F9",
+        "tonalRamp": ["#28292A", "#4B4D4E", "#6C6E70", "#8A8D8F", "#A8ABAE", "#C4C7CB", "#DDE1E5", "#EFF3F7"],
+        "note": "Shares one value with app-rule-inner by design: the app world’s inner-register slate."
+      },
+      "app-rule": {
+        "role": "neutral",
+        "displayName": "Frame Slate",
+        "canonical": "#E2E8F0",
+        "tonalRamp": ["#28292A", "#4B4D4F", "#6B6E72", "#898D92", "#A7ABB1", "#C2C8CE", "#DBE1E9", "#EFF3F7"]
+      },
+      "app-rule-inner": {
+        "role": "neutral",
+        "displayName": "Row Slate (Inner Rule)",
+        "canonical": "#F1F5F9",
+        "tonalRamp": ["#28292A", "#4B4D4E", "#6C6E70", "#8A8D8F", "#A8ABAE", "#C4C7CB", "#DDE1E5", "#EFF3F7"],
+        "note": "Shares one value with app-surface-strong by design: the app world’s inner-register slate."
+      },
+      "app-ink": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#0F172A",
+        "tonalRamp": ["#22293B", "#474D5B", "#696E7A", "#888C96", "#A8ABB2", "#C5C7CC", "#DFE0E3", "#F2F2F3"]
+      },
+      "app-ink-mid": {
+        "role": "neutral",
+        "displayName": "Secondary Slate",
+        "canonical": "#64748B",
+        "tonalRamp": ["#242932", "#434E5D", "#606F85", "#818EA0", "#A2ACBA", "#C1C8D1", "#DDE1E6", "#F1F2F4"]
+      },
+      "app-ink-faint": {
+        "role": "neutral",
+        "displayName": "Faint Slate",
+        "canonical": "#94A3B8",
+        "tonalRamp": ["#25292F", "#464D57", "#656F7D", "#818EA0", "#9FACBF", "#BFC8D4", "#DCE1E8", "#F0F2F5"]
+      },
+      "app-ink-control": {
+        "role": "neutral",
+        "displayName": "Control Slate",
+        "canonical": "#334155",
+        "tonalRamp": ["#212A37", "#414E61", "#646F7E", "#858D99", "#A5ACB4", "#C3C7CD", "#DEE1E4", "#F1F2F4"]
+      },
+      "app-primary": {
+        "role": "primary",
+        "displayName": "Ledger Blue",
+        "canonical": "#2563EB",
+        "tonalRamp": ["#102A64", "#1E4FBC", "#3871ED", "#628FF1", "#8CADF4", "#B2C8F8", "#D5E1FB", "#EEF3FD"]
+      },
+      "app-primary-press": {
+        "role": "primary",
+        "displayName": "Ledger Blue Press",
+        "canonical": "#1D4ED8",
+        "tonalRamp": ["#0F2972", "#1D4DD5", "#466EDF", "#6D8DE6", "#94ABED", "#B8C7F3", "#D8E0F8", "#EFF2FC"]
+      },
+      "app-primary-tint": {
+        "role": "primary",
+        "displayName": "Blue Tint",
+        "canonical": "#EFF6FF",
+        "tonalRamp": ["#28292A", "#4B4D50", "#6B6E72", "#898D92", "#A7ABB2", "#C2C8CF", "#DBE1E9", "#ECF3FC"]
+      },
+      "app-selection": {
+        "role": "primary",
+        "displayName": "Selection Blue",
+        "canonical": "#BFDBFE",
+        "tonalRamp": ["#242930", "#444E5A", "#616F81", "#7C8EA5", "#97AEC9", "#B0CAEA", "#CDE3FE", "#EAF3FF"]
+      },
+      "app-success-text": {
+        "role": "secondary",
+        "displayName": "Growth Green",
+        "canonical": "#15803D",
+        "tonalRamp": ["#093419", "#10622E", "#238849", "#51A16F", "#80BA95", "#AAD1B9", "#D1E6D9", "#ECF5EF"]
+      },
+      "app-danger": {
+        "role": "secondary",
+        "displayName": "Danger Red",
+        "canonical": "#DC2626",
+        "tonalRamp": ["#751414", "#DB2626", "#E24E4E", "#E87373", "#EE9999", "#F4BBBB", "#F9DADA", "#FCEFEF"]
+      },
+      "app-danger-deep": {
+        "role": "secondary",
+        "displayName": "Danger Deep",
+        "canonical": "#B91C1C",
+        "tonalRamp": ["#7B1313", "#BE2E2E", "#CA5555", "#D67878", "#E19C9C", "#EBBDBD", "#F4DBDB", "#FAF0F0"]
+      },
+      "app-notice-success-bg": {
+        "role": "secondary",
+        "displayName": "Notice Green Ground",
+        "canonical": "#F0FDF4",
+        "tonalRamp": ["#272928", "#4A4E4B", "#696F6B", "#878E89", "#A4ADA7", "#BFCAC2", "#D8E3DB", "#E9F6ED"]
+      },
+      "app-notice-success-border": {
+        "role": "secondary",
+        "displayName": "Notice Green Border",
+        "canonical": "#BBF7D0",
+        "tonalRamp": ["#212C25", "#3E5245", "#597563", "#71967E", "#8AB69A", "#A1D4B3", "#B5EFCA", "#DAFBE6"]
+      },
+      "app-notice-success-text": {
+        "role": "secondary",
+        "displayName": "Notice Green Text",
+        "canonical": "#166534",
+        "tonalRamp": ["#0B331A", "#156031", "#3D7F56", "#669A79", "#8FB59D", "#B4CDBE", "#D6E4DB", "#EEF4F0"]
+      },
+      "app-notice-error-bg": {
+        "role": "secondary",
+        "displayName": "Notice Red Ground",
+        "canonical": "#FEF2F2",
+        "tonalRamp": ["#2A2828", "#4F4C4C", "#726D6D", "#928B8B", "#B1A9A9", "#CFC5C5", "#E9DEDE", "#FCF0F0"]
+      },
+      "app-notice-error-border": {
+        "role": "secondary",
+        "displayName": "Notice Red Border",
+        "canonical": "#FECACA",
+        "tonalRamp": ["#312727", "#5B4949", "#836868", "#A78585", "#CCA2A2", "#EDBDBD", "#FED8D8", "#FFEFEF"]
+      },
+      "app-notice-error-text": {
+        "role": "secondary",
+        "displayName": "Notice Red Text",
+        "canonical": "#B91C1C",
+        "tonalRamp": ["#7B1313", "#BE2E2E", "#CA5555", "#D67878", "#E19C9C", "#EBBDBD", "#F4DBDB", "#FAF0F0"]
+      },
+      "app-quiet-slate": {
+        "role": "neutral",
+        "displayName": "Edge Slate",
+        "canonical": "#CBD5E1",
+        "tonalRamp": ["#27292B", "#494D51", "#696E75", "#868D95", "#A4ACB6", "#BFC8D3", "#DAE1EA", "#F0F3F6"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The page-level claim only: one per major band, flush left on the 8-column side. (display-headline class.)"
+      },
+      "headline": {
+        "displayName": "Section Head",
+        "purpose": "Section titles under the 1px ink setting rule. (section-head class.)"
+      },
+      "title": {
+        "displayName": "Story Head",
+        "purpose": "Column and feature heads inside the three-thirds band. (story-head class.)"
+      },
+      "sheet-title": {
+        "displayName": "Sheet Title",
+        "purpose": "The in-sheet headline on auth pages: fixed 30px/700 at -0.03em, one per sheet. (sheet-title class.)"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs and decks; secondary copy set in Info Gray at 1.7 line-height."
+      },
+      "label": {
+        "displayName": "Small Label",
+        "purpose": "Uppercase micro-labels: figcaption tags, header nav, notices caption, copyright, auth sheet caption tags and field captions. (small-label class.)"
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "The Fortuna logotype: header 1.5rem, footer 1.1rem, always 700 at -0.03em. (wordmark class.)"
+      },
+      "app-page-title": {
+        "displayName": "Page Title",
+        "purpose": "The one headline per signed-in page, Inter 600 at 24px and −0.02em. (sheet-title class in the app world.)"
+      },
+      "app-figure": {
+        "displayName": "Figure",
+        "purpose": "Headline money in the figure cards: Inter 600, 26px, tabular. (figure-value class; the display register of the app world.)"
+      },
+      "app-heading": {
+        "displayName": "Card Heading",
+        "purpose": "Sheet captions and card heads at Inter 600 / 15px."
+      },
+      "app-body": {
+        "displayName": "App Body",
+        "purpose": "The app world’s working copy: 14px/1.6; notes 13px, foot notes 12.5px, both in Secondary Slate."
+      },
+      "app-label": {
+        "displayName": "App Small Label",
+        "purpose": "Uppercase 11px/600 micro-labels: figure-card metric names, notice flags, footer, top-bar date. (small-label class in the app world.)"
+      }
+    },
+    "shadows": [
+      {
+        "name": "app-field-focus-ring",
+        "value": "0 0 0 3px rgba(37, 99, 235, 0.15)",
+        "purpose": "Boxed-field focus ring in the app world: a state indicator that replaces the outline, never elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "140ms ease-out",
+        "purpose": "The only motion in the system, in both worlds: button and control backgrounds, quiet-link color and underline on hover."
+      },
+      {
+        "name": "entrance",
+        "value": "none",
+        "purpose": "Deliberate Flat Stability: the first painted frame is the final state in both worlds; the app’s ApexCharts charts ship with animations disabled."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }",
+        "purpose": "Shipped kill switch in both shells (welcome/guest and layouts/app.blade.php); honor it even if future motion is added."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px",
+        "purpose": "Swiss Light: deck and action rows inline; header \"Log in\" hides below it. App: records switch from stacked rows to the table; figure grids step to 2 across."
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "purpose": "Swiss Light: 12-column grids engage; section headroom steps pt-16 → pt-24. App: top-bar date appears; content padding steps to py-12."
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Swiss Light: forces the display headline’s two-line break. App: sidebar appears and the mobile menu control disappears; charts go two-up."
+      },
+      {
+        "name": "xl",
+        "value": "1280px",
+        "purpose": "App: the dashboard figure row steps to four across."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one conversion action: Create your account / Open your ledger. Solid Fortuna Red, sharp corners, 140ms press feedback.",
+      "html": "<a class=\"ds-btn-primary\">Create your account</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: #E3000F; color: #FFFFFF; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; line-height: 1.6; padding: 14px 28px; border-radius: 0; text-decoration: none; transition: background-color 140ms ease-out; } .ds-btn-primary:hover { background: #B8000C; } .ds-btn-primary:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Link",
+      "kind": "custom",
+      "refersTo": "quiet-link",
+      "description": "The return/secondary action: ink text whose underlined affordance darkens on hover; the text itself never changes color.",
+      "html": "<a class=\"ds-quiet-link\">Already keeping a ledger? Log in</a>",
+      "css": ".ds-quiet-link { color: #111111; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 500; line-height: 1.6; text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: #C9C9C5; text-underline-offset: 4px; transition: text-decoration-color 140ms ease-out; } .ds-quiet-link:hover { text-decoration-color: #111111; } .ds-quiet-link:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "wordmark",
+      "description": "The Fortuna logotype, set in the display voice, flush left in the top bar, repeated small in the footer strip.",
+      "html": "<a class=\"ds-wordmark\">Fortuna</a>",
+      "css": ".ds-wordmark { font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.03em; line-height: 1; color: #111111; text-decoration: none; } .ds-wordmark:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Small Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Uppercase micro-caption used for figcaption tags (\"This month\" / \"Specimen\"), header nav links, and the notices caption.",
+      "html": "<span class=\"ds-small-label\">Specimen</span>",
+      "css": ".ds-small-label { font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #111111; }"
+    },
+    {
+      "name": "Meter",
+      "kind": "custom",
+      "refersTo": "meter",
+      "description": "The 4px budget bar: ground-track with an ink fill; the meter-over variant fills Fortuna Red to flag an overshoot the day it happened.",
+      "html": "<div class=\"ds-meter-track\" role=\"img\" aria-label=\"Groceries: 89 percent of budget\"><span class=\"ds-meter-fill\" style=\"width: 89%\"></span></div>",
+      "css": ".ds-meter-track { height: 4px; background: #F0F0EE; } .ds-meter-fill { display: block; height: 4px; background: #111111; } .ds-meter-over .ds-meter-fill { background: #E3000F; }"
+    },
+    {
+      "name": "Specimen Figure",
+      "kind": "card",
+      "refersTo": "specimen-table",
+      "description": "The signature surface: a hairline-framed white ledger with an uppercase caption strip, tabular-numeral rows, per-row meters, one Fortuna-Red flagged overshoot, and an honest footer note.",
+      "html": "<figure class=\"ds-specimen\"><figcaption><span class=\"ds-small-label\">This month</span><span class=\"ds-small-label ds-dim\">Specimen</span></figcaption><div class=\"ds-specimen-rows\"><div class=\"ds-row\"><div class=\"ds-line\"><p class=\"ds-label\">Groceries</p><p class=\"ds-amount ds-dim ds-tnum\">312.40 / 350.00 MYR</p></div><div class=\"ds-meter-track\" role=\"img\" aria-label=\"Groceries: 89 percent of budget\"><span class=\"ds-meter-fill\" style=\"width: 89%\"></span></div></div><div class=\"ds-row ds-over\"><div class=\"ds-line\"><p class=\"ds-label\">Dining &amp; coffee</p><p class=\"ds-amount ds-tnum ds-over-amount\">168.90 / 150.00 MYR</p></div><div class=\"ds-meter-track ds-meter-over\" role=\"img\" aria-label=\"Dining and coffee: 113 percent of budget, over\"><span class=\"ds-meter-fill\" style=\"width: 100%\"></span></div><p class=\"ds-note\">Over budget. <span class=\"ds-flag\">Flagged the day it happened.</span></p></div></div><p class=\"ds-foot\">Illustrative data. Your ledger keeps its own pages.</p></figure>",
+      "css": ".ds-specimen { margin: 0; max-width: 360px; background: #FFFFFF; border: 1px solid #E4E4E2; border-radius: 0; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #111111; } .ds-specimen figcaption { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 20px 12px; border-bottom: 1px solid #E4E4E2; } .ds-specimen .ds-small-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-specimen .ds-dim { color: #6E6E6E; } .ds-specimen-rows { padding: 8px 20px; } .ds-row { padding: 14px 0; border-bottom: 1px solid #EFEFED; } .ds-line { display: flex; align-items: baseline; justify-content: space-between; font-size: 14px; } .ds-label { margin: 0; font-weight: 500; } .ds-amount { margin: 0; color: #6E6E6E; font-weight: 400; } .ds-tnum { font-variant-numeric: tabular-nums; } .ds-over-amount { color: #E3000F; font-weight: 600; } .ds-specimen .ds-meter-track { margin-top: 8px; height: 4px; background: #F0F0EE; } .ds-specimen .ds-meter-fill { display: block; height: 4px; background: #111111; } .ds-meter-over .ds-meter-fill { background: #E3000F; } .ds-specimen .ds-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.375; color: #6E6E6E; } .ds-specimen .ds-flag { color: #E3000F; font-weight: 500; } .ds-specimen .ds-foot { margin: 0; padding: 12px 20px; border-top: 1px solid #E4E4E2; font-size: 12.5px; color: #6E6E6E; }"
+    },
+    {
+      "name": "Field Row",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "The auth family's only field primitive: a small-label caption above a borderless 15px input on a hairline row; an error is a 12.5px accent line under the row, never a red frame.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-field-email\">Email address</label><input id=\"ds-field-email\" class=\"ds-field-input\" type=\"email\" placeholder=\"name@example.com\"></div><div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-field-password\">Password</label><input id=\"ds-field-password\" class=\"ds-field-input\" type=\"password\"><p class=\"ds-field-error\">These credentials do not match our records.</p></div>",
+      "css": ".ds-field { padding: 13px 0 12px; border-bottom: 1px solid #EFEFED; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-field:last-child { border-bottom: 0; } .ds-field-label { display: block; color: #6E6E6E; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-field-input { display: block; width: 100%; border: 0; background: transparent; padding: 5px 0 1px; font-family: inherit; font-size: 15px; line-height: 1.4; color: #111111; outline: none; } .ds-field-input::placeholder { color: #B0B0AC; } .ds-field-input:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; box-shadow: none; } .ds-field-error { margin: 6px 0 0; font-size: 12.5px; line-height: 1.5; color: #E3000F; }"
+    },
+    {
+      "name": "Specimen Sheet (Auth)",
+      "kind": "custom",
+      "refersTo": "specimen-sheet",
+      "description": "The signed-out page as one white specimen sheet on the paper ground: caption tags, sheet title, deck, hairline field rows, a full-bleed Fortuna Red submit, a hairline footnote, and one quiet cross-link under it.",
+      "html": "<div class=\"ds-sheet-wrap\"><div class=\"ds-sheet\"><div class=\"ds-sheet-cap\"><span class=\"ds-sheet-label\">Fortuna</span><span class=\"ds-sheet-label ds-dim\">Sign in</span></div><div class=\"ds-sheet-body\"><h1 class=\"ds-sheet-title\">Your ledger is as you left it.</h1><p class=\"ds-sheet-deck\">Sign in and the book opens where you left it. Every entry, receipt, and budget stays as you filed it.</p><div class=\"ds-sheet-fields\"><div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-sheet-email\">Email address</label><input id=\"ds-sheet-email\" class=\"ds-field-input\" type=\"email\" placeholder=\"name@example.com\"></div><div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-sheet-password\">Password</label><input id=\"ds-sheet-password\" class=\"ds-field-input\" type=\"password\"></div></div></div><button class=\"ds-sheet-submit\">Log in</button><p class=\"ds-sheet-foot\">One ledger, one user. Nothing is shared.</p></div><p class=\"ds-sheet-cross\"><a class=\"ds-quiet-link\" href=\"#\">Not keeping a ledger yet? Create one</a></p></div>",
+      "css": ".ds-sheet-wrap { background: #FAFAF8; padding: 40px 24px; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-sheet { max-width: 480px; margin: 0 auto; background: #FFFFFF; border: 1px solid #E4E4E2; color: #111111; } .ds-sheet-cap { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 24px 12px; border-bottom: 1px solid #E4E4E2; } .ds-sheet-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-sheet-label.ds-dim { color: #6E6E6E; } .ds-sheet-body { padding: 24px 24px 10px; } .ds-sheet-title { margin: 0; font-weight: 700; font-size: 1.875rem; line-height: 1.15; letter-spacing: -0.03em; text-wrap: balance; } .ds-sheet-deck { margin: 12px 0 0; font-size: 15px; line-height: 1.7; color: #6E6E6E; } .ds-sheet-fields { margin-top: 20px; } .ds-field { padding: 13px 0 12px; border-bottom: 1px solid #EFEFED; } .ds-field:last-child { border-bottom: 0; } .ds-field-label { display: block; color: #6E6E6E; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-field-input { display: block; width: 100%; border: 0; background: transparent; padding: 5px 0 1px; font-family: inherit; font-size: 15px; line-height: 1.4; color: #111111; outline: none; } .ds-field-input::placeholder { color: #B0B0AC; } .ds-field-input:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; box-shadow: none; } .ds-sheet-submit { display: block; width: 100%; border: 0; background: #E3000F; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1.6; padding: 15px 0; text-align: center; cursor: pointer; transition: background-color 140ms ease-out; } .ds-sheet-submit:hover { background: #B8000C; } .ds-sheet-submit:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; } .ds-sheet-foot { margin: 0; padding: 12px 24px; border-top: 1px solid #E4E4E2; font-size: 12.5px; line-height: 1.6; color: #6E6E6E; } .ds-sheet-cross { max-width: 480px; margin: 20px auto 0; font-size: 15px; font-weight: 500; } .ds-quiet-link { color: #111111; text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: #C9C9C5; text-underline-offset: 4px; transition: text-decoration-color 140ms ease-out; } .ds-quiet-link:hover { text-decoration-color: #111111; } .ds-quiet-link:focus-visible { outline: 2px solid #E3000F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Setting Rule",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Every section announces itself with a full-width 1px ink rule and generous headroom before its section-head: the drawn, not built, alternative to cards.",
+      "html": "<div class=\"ds-section-rule\"><h2 class=\"ds-section-head\">What Fortuna does</h2></div>",
+      "css": ".ds-section-rule { border-top: 1px solid #111111; padding-top: 40px; font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-section-head { margin: 0; color: #111111; font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.03em; line-height: 1.15; text-wrap: balance; }"
+    },
+    {
+      "name": "App Primary Button",
+      "kind": "button",
+      "refersTo": "app-button-primary",
+      "description": "The app world’s capture action: solid Ledger Blue, 8px radius, 140ms press feedback.",
+      "html": "<button class=\"ds-app-btn\">Record a transaction</button>",
+      "css": ".ds-app-btn { display: inline-block; border: 0; border-radius: 8px; background: #2563EB; color: #FFFFFF; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 10px 16px; text-align: center; white-space: nowrap; cursor: pointer; transition: background-color 140ms ease-out; } .ds-app-btn:hover { background: #1D4ED8; } .ds-app-btn:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    },
+    {
+      "name": "App Sheet Submit",
+      "kind": "button",
+      "refersTo": "app-button-block",
+      "description": "The submit at the foot of a dialog sheet, inset 20px each side; one per sheet.",
+      "html": "<button class=\"ds-app-block\">Save entry</button>",
+      "css": ".ds-app-block { display: block; border: 0; border-radius: 8px; background: #2563EB; color: #FFFFFF; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 12px 0; text-align: center; cursor: pointer; transition: background-color 140ms ease-out; width: calc(100% - 40px); margin: 0 20px 20px; } .ds-app-block:hover { background: #1D4ED8; } .ds-app-block:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    },
+    {
+      "name": "App Danger Submit",
+      "kind": "button",
+      "refersTo": "app-button-danger-block",
+      "description": "The destructive confirmation submit: the same block geometry on Danger Red, hover to Danger Deep. Deletion only.",
+      "html": "<button class=\"ds-app-block-danger\">Delete account</button>",
+      "css": ".ds-app-block-danger { display: block; border: 0; border-radius: 8px; background: #2563EB; color: #FFFFFF; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 12px 0; text-align: center; cursor: pointer; transition: background-color 140ms ease-out; width: calc(100% - 40px); margin: 0 20px 20px; background: #DC2626; } .ds-app-block-danger:hover { background: #B91C1C; } .ds-app-block-danger:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    },
+    {
+      "name": "App Delete Trigger",
+      "kind": "button",
+      "refersTo": "app-button-delete-block",
+      "description": "The quiet destructive trigger: white with a 1px Frame Slate border; hover moves border, background, and label into the red register.",
+      "html": "<button class=\"ds-app-delete\">Delete account</button>",
+      "css": ".ds-app-delete { display: block; width: calc(100% - 40px); margin: 0 20px 20px; margin-bottom: 0; border: 1px solid #E2E8F0; border-radius: 8px; background: #FFFFFF; color: #0F172A; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 11px 0; text-align: center; cursor: pointer; transition: background-color 140ms ease-out, border-color 140ms ease-out, color 140ms ease-out; } .ds-app-delete:hover { border-color: #FECACA; background: #FEF2F2; color: #DC2626; } .ds-app-delete:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    },
+    {
+      "name": "App Field",
+      "kind": "input",
+      "refersTo": "app-field-input",
+      "description": "The app world’s boxed field: white, 1px Frame Slate, 8px radius; focus is a Ledger Blue border plus a 3px ring; errors are a 12.5px Danger Red line under the input.",
+      "html": "<div class=\"ds-app-field\"><label class=\"ds-app-field-label\" for=\"ds-app-amount\">Amount</label><input class=\"ds-app-input\" id=\"ds-app-amount\" type=\"text\" inputmode=\"decimal\" placeholder=\"0.00\"></div><div class=\"ds-app-field\"><label class=\"ds-app-field-label\" for=\"ds-app-note\">Description · optional</label><input class=\"ds-app-input\" id=\"ds-app-note\" type=\"text\" placeholder=\"e.g. Weekly groceries\"><p class=\"ds-app-field-error\">The amount must be at least 0.01.</p></div>",
+      "css": ".ds-app-field { margin-bottom: 16px; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-app-field-label { display: block; margin-bottom: 6px; color: #334155; font-size: 13px; font-weight: 500; } .ds-app-input { display: block; width: 100%; border: 1px solid #E2E8F0; border-radius: 8px; background: #FFFFFF; padding: 9px 12px; font-family: inherit; font-size: 14px; line-height: 1.5; color: #0F172A; transition: border-color 140ms ease-out, box-shadow 140ms ease-out; } .ds-app-input::placeholder { color: #64748B; } .ds-app-input:focus { outline: none; border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); } .ds-app-field-error { margin: 6px 0 0; color: #DC2626; font-size: 12.5px; line-height: 1.5; }"
+    },
+    {
+      "name": "App Sheet Card",
+      "kind": "card",
+      "refersTo": "app-sheet",
+      "description": "The working surface: white, 1px Frame Slate, 12px radius; cap over the inner rule, 20px body, 12.5px foot. Every list, form, and chart in the app lives on one.",
+      "html": "<div class=\"ds-app-sheet\"><div class=\"ds-app-sheet-cap\"><h3 class=\"ds-app-sheet-title\">This month’s budgets</h3><span class=\"ds-app-sheet-meta\">October 2026</span></div><div class=\"ds-app-sheet-body\"><p class=\"ds-app-sheet-copy\">Give each category a monthly line and the check keeps itself from here.</p></div><p class=\"ds-app-sheet-foot\">Amounts in MYR.</p></div>",
+      "css": ".ds-app-sheet { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #0F172A; } .ds-app-sheet-cap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #F1F5F9; } .ds-app-sheet-title { margin: 0; font-size: 15px; font-weight: 600; } .ds-app-sheet-meta { color: #64748B; font-size: 13px; font-variant-numeric: tabular-nums; } .ds-app-sheet-body { padding: 20px; } .ds-app-sheet-copy { margin: 0; color: #64748B; font-size: 14px; line-height: 1.6; } .ds-app-sheet-foot { margin: 0; padding: 12px 20px; border-top: 1px solid #F1F5F9; color: #64748B; font-size: 12.5px; line-height: 1.6; }"
+    },
+    {
+      "name": "App Figure Card",
+      "kind": "card",
+      "refersTo": "app-figure-card",
+      "description": "The KPI card of the summary row: Panel Slate, 12px radius; label, 26px/600 tabular figure with a muted MYR prefix, 13px note. Red only past the line.",
+      "html": "<div class=\"ds-app-figure\"><p class=\"ds-app-figure-label\">Spent this month</p><p class=\"ds-app-figure-value\"><span class=\"ds-app-figure-currency\">MYR</span>2,071.44</p><p class=\"ds-app-figure-note\">Everything recorded in October.</p></div>",
+      "css": ".ds-app-figure { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #0F172A; } .ds-app-figure-label { margin: 0; color: #64748B; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-app-figure-value { margin: 10px 0 0; font-size: 26px; font-weight: 600; line-height: 1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; } .ds-app-figure-currency { margin-right: 6px; color: #64748B; font-size: 13px; font-weight: 500; } .ds-app-figure-note { margin: 8px 0 0; color: #64748B; font-size: 13px; line-height: 1.5; }"
+    },
+    {
+      "name": "App Budget Row",
+      "kind": "custom",
+      "refersTo": "app-meter",
+      "description": "The budget check row: name and spent/limit in tabular money over a 6px pill meter; past the line the amount and fill turn Danger Red and a note carries the excess.",
+      "html": "<div class=\"ds-app-rows\"><div class=\"ds-app-row\"><div class=\"ds-app-row-line\"><p class=\"ds-app-row-name\">Rent</p><p class=\"ds-app-row-amount\">326.57 <span class=\"ds-app-row-sep\">/</span> 361.21</p></div><div class=\"ds-app-meter\" role=\"img\" aria-label=\"Rent: 90 percent of budget\"><span style=\"width: 90%\"></span></div></div><div class=\"ds-app-row\"><div class=\"ds-app-row-line\"><p class=\"ds-app-row-name\">Dining &amp; coffee</p><p class=\"ds-app-row-amount ds-app-row-amount-over\">168.90 <span class=\"ds-app-row-sep\">/</span> 150.00</p></div><div class=\"ds-app-meter ds-app-meter-over\" role=\"img\" aria-label=\"Dining and coffee: 113 percent of budget, over\"><span style=\"width: 100%\"></span></div><p class=\"ds-app-row-note\">Over budget. <span class=\"ds-app-row-note-amount\">18.90</span> past the line.</p></div></div>",
+      "css": ".ds-app-rows { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 8px 20px; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-app-row { padding: 16px 0; border-bottom: 1px solid #F1F5F9; color: #0F172A; } .ds-app-row:last-child { border-bottom: 0; } .ds-app-row-line { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; font-size: 14px; } .ds-app-row-name { margin: 0; font-weight: 500; } .ds-app-row-amount { margin: 0; color: #64748B; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-app-row-sep { color: #94A3B8; } .ds-app-row-amount-over { color: #DC2626; font-weight: 600; } .ds-app-meter { height: 6px; margin-top: 10px; border-radius: 999px; background: #F1F5F9; overflow: hidden; } .ds-app-meter span { display: block; height: 100%; border-radius: 999px; background: #2563EB; } .ds-app-meter-over span { background: #DC2626; } .ds-app-row-note { margin: 8px 0 0; color: #64748B; font-size: 13px; line-height: 1.4; } .ds-app-row-note-amount { color: #DC2626; font-weight: 500; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "App Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "app-nav-link",
+      "description": "The left nav at rest and active: 8px-radius rows, Secondary Slate; hover Panel Slate with ink text; active (only) Blue Tint with a Ledger Blue Press label.",
+      "html": "<nav class=\"ds-app-nav\" aria-label=\"Primary\"><a class=\"ds-app-nav-link ds-app-nav-link-active\" aria-current=\"page\" href=\"#\">Dashboard</a><a class=\"ds-app-nav-link\" href=\"#\">Transactions</a><a class=\"ds-app-nav-link\" href=\"#\">Budgets</a><a class=\"ds-app-nav-link\" href=\"#\">Categories</a></nav>",
+      "css": ".ds-app-nav { display: flex; flex-direction: column; gap: 4px; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-app-nav-link { display: flex; align-items: center; border-radius: 8px; padding: 10px 12px; color: #64748B; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 140ms ease-out, color 140ms ease-out; } .ds-app-nav-link:hover { background: #F8FAFC; color: #0F172A; } .ds-app-nav-link-active, .ds-app-nav-link-active:hover { background: #EFF6FF; color: #1D4ED8; } .ds-app-nav-link:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    },
+    {
+      "name": "App Dialog Sheet",
+      "kind": "custom",
+      "refersTo": "app-sheet",
+      "description": "A dialog sheet: the sheet pattern at max-width 480px on a 40% Slate Ink scrim; role=dialog, focus moves in, Escape closes, Tab is trapped — scripted in layouts/app.blade.php.",
+      "html": "<div class=\"ds-app-scrim\"><div class=\"ds-app-dialog\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"ds-app-dialog-title\"><div class=\"ds-app-dialog-cap\"><h3 id=\"ds-app-dialog-title\">New entry</h3><button class=\"ds-app-dialog-close\" type=\"button\">Close</button></div><div class=\"ds-app-dialog-body\"><div class=\"ds-app-field\"><label class=\"ds-app-field-label\" for=\"ds-app-dialog-desc\">Description · optional</label><input class=\"ds-app-input\" id=\"ds-app-dialog-desc\" type=\"text\" placeholder=\"e.g. Weekly groceries\"></div></div><button class=\"ds-app-dialog-submit\" type=\"button\">Save entry</button><p class=\"ds-app-dialog-foot\">Amounts in MYR.</p></div></div>",
+      "css": ".ds-app-scrim { padding: 24px 16px; background: rgba(15, 23, 42, 0.4); } .ds-app-dialog { max-width: 480px; margin: 0 auto; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #0F172A; } .ds-app-dialog-cap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid #F1F5F9; } .ds-app-dialog-cap h3 { margin: 0; font-size: 15px; font-weight: 600; } .ds-app-dialog-close { border: 0; background: none; padding: 0; color: #64748B; font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: color 140ms ease-out; } .ds-app-dialog-close:hover { color: #0F172A; } .ds-app-dialog-body { padding: 20px; } .ds-app-dialog-submit { display: block; border: 0; border-radius: 8px; background: #2563EB; color: #FFFFFF; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.5; padding: 12px 0; text-align: center; cursor: pointer; transition: background-color 140ms ease-out; width: calc(100% - 40px); margin: 0 20px 20px; } .ds-app-dialog-submit:hover { background: #1D4ED8; } .ds-app-dialog-submit:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; } .ds-app-dialog-foot { margin: 0; padding: 12px 20px; border-top: 1px solid #F1F5F9; color: #64748B; font-size: 12.5px; line-height: 1.6; } .ds-app-field { margin-bottom: 16px; } .ds-app-field-label { display: block; margin-bottom: 6px; color: #334155; font-size: 13px; font-weight: 500; } .ds-app-input { display: block; width: 100%; border: 1px solid #E2E8F0; border-radius: 8px; background: #FFFFFF; padding: 9px 12px; font-family: inherit; font-size: 14px; line-height: 1.5; color: #0F172A; } .ds-app-input::placeholder { color: #64748B; } .ds-app-input:focus { outline: none; border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }"
+    },
+    {
+      "name": "App Inline Actions",
+      "kind": "custom",
+      "refersTo": "app-inline-action",
+      "description": "The app’s quiet secondary register (Edit, View, Clear, Cancel, Previous/Next, Export CSV, Monthly summary (PDF)): 13px/500 Secondary Slate that hovers to Slate Ink. Downloads stay in this register — never a second solid button.",
+      "html": "<a class=\"ds-app-action\">Export CSV</a>",
+      "css": ".ds-app-action { color: #64748B; font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; transition: color 140ms ease-out; } .ds-app-action:hover { color: #0F172A; } .ds-app-action:focus-visible { outline: 2px solid #2563EB; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Swiss Light",
+    "overview": "Fortuna looks like a Swiss typographic report: flat, gridded, unhurried, and precise. Nothing floats, nothing glows, nothing bounces. Every claim sits flush-left against a near-white paper ground (#FAFAF8), separated by hairline rules rather than boxed into cards, set in one grotesque family (Archivo) at tighter tracking as sizes grow. This is deliberate contrast with the hero-over-card-row conversion template the product refuses; the persuasion job is done by an inset specimen ledger table (hairline-ruled, tabular numerals, one overshoot flagged in the accent) because in this world an honest, well-set table is more persuasive than a testimonial could ever be (no testimonials exist, and none may be invented).\n\nTrust is carried by restraint: shallow-gray secondary text, generous whitespace, one strong signal accent rationed to actions and flags, and data that always reports straight. The page is stable and flat by design: there is no entrance animation; the first painted frame is the final state. Since the first recording, the world has grown from the front page to the signed-out family: the auth pages are the same ground and hairlines with one specimen sheet where the front page sets a report.\n\nSince 2026-10-17 the product deliberately runs two worlds. The signed-in family was rebuilt in Swiss Minimal Light, the world the user pinned: a white ground, #F8FAFC tinted panels inside 1px #E2E8F0 frames, Inter with tabular money, and one accent — banking blue #2563EB — running as a single thread per region (active nav, primary actions, meter fills, the expense line). It is the same restraint in a workday register: no shadows at rest, structure drawn at 1px, green and red kept strictly as state flags on data. The signed-in app refuses the generic gradient analytics dashboard; the ruled budget check stays the hero, and the four figure cards and charts serve it. Welcome and auth keep Swiss Light unchanged: the two worlds are a committed product decision, not a migration in progress.",
+    "keyCharacteristics": [
+      "Near-white paper ground, pure-ink text, single strong red accent reserved for response (Swiss Light).",
+      "Hairline rules replace cards, shadows, glass, and gradient surfaces entirely (Swiss Light).",
+      "One self-hosted grotesque (Archivo, 400–700); display sizes track negative and set with `text-wrap: balance` (Swiss Light).",
+      "The working register (Swiss Minimal Light): white ground, #F8FAFC panels inside 1px #E2E8F0 frames, boxed controls at 8px, surfaces at 12px, Inter 400–700, 26px/600 figures.",
+      "One blue thread: #2563EB is the app’s only accent; green (#15803D and the notice greens) and red (#DC2626) appear only as state flags on data.",
+      "Tabular numerals (`.tnum`) on every money figure in both worlds, so columns align like a ledger.",
+      "Flat stability in both worlds: no entrance animation, no resting shadows; the only motion is 140ms state feedback, and the app’s charts ship with animations disabled.",
+      "Data honesty: numbers reflect stored truth; downloaded/announced features are labeled as notices, never shipped claims.",
+      "One sheet per signed-out page: the auth family repeats the front page’s paper, hairlines, caption tags, and single red submit (Swiss Light).",
+      "Two deliberate worlds, one discipline: a surface belongs to exactly one world (The Two-World Rule), and structure is drawn in both."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Fortuna Red appears only in response positions: the primary button, an active overshoot, a validation error, focus, and text selection. It is never resting-state text and never decoration. On any Swiss Light surface its total area stays small by design: that scarcity is what makes the overshoot, the error, and the one red submit read.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hairline Doctrine",
+        "body": "In the Swiss Light world, structure is drawn, not built. No `box-shadow`, no `backdrop-filter`, no gradient panel, no rounded card. A container boundary is a 1px #E4E4E2 line; a section boundary is 1px #111111; row-versus-frame is two levels of hairline (#EFEFED inside, #E4E4E2 outside).",
+        "section": "colors"
+      },
+      {
+        "name": "The One Blue Thread Rule",
+        "body": "In the app world #2563EB is the only accent, and it runs as one thread per region — active nav, the primary action, meter fills, the expense line, focus. Semantic green and red never leave the data they flag. No second accent, no decorative fill: scarcity is what makes \"past the line\" read in red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-World Rule",
+        "body": "Each shipped surface declares its world and stays in it: welcome and auth extend Swiss Light (Archivo, Fortuna Red, paper ground); signed-in pages extend Swiss Minimal Light (Inter, Ledger Blue, Working White). Tokens do not cross. Adding a surface starts by choosing its world, not by blending two.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Numbers Rule",
+        "body": "Any figure that means money gets `.tnum`, in both worlds. Non-aligned numerals in a data row are a bug, not a style choice.",
+        "section": "typography"
+      },
+      {
+        "name": "The White-Out Rule",
+        "body": "The specimen figure and its ledger rows are typographic only: no numbered chips, no icon dots, no sparkline ornament. Attention goes to the numbers and the flagged row. (Swiss Light.)",
+        "section": "typography"
+      },
+      {
+        "name": "The Figure Register Rule",
+        "body": "In the app world headline numbers are set in the 26px/600 tabular figure display on the figure cards; they are never shrunk into chips, icon-decorated, or animated. Row money stays 13–14px `.tnum`; the display register is reserved for the month’s standing.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Sheet Rule",
+        "body": "A signed-out page is one specimen sheet centred on the ground (caption tags, headline, deck, hairline field rows, one full-bleed accent submit, hairline footnote), with a single quiet cross-link under it. No split hero, no side panel, no second card; if the content doesn’t fit one sheet, it isn’t an auth page. (Swiss Light.)",
+        "section": "layout"
+      },
+      {
+        "name": "The Figures-First Rule",
+        "body": "A signed-in page opens with its standing as figures: the dashboard’s four cards (total balance, income this month, spent this month, budget remaining) sit above the budget check, and the charts sit below it. Those numbers are server-rendered, so the first painted frame is the answer; the check comes next, the evidence after. (Swiss Minimal Light.)",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Surfaces never lift, in either world. If something must feel separate, separate it with a rule or a tone step (#FFFFFF on #FAFAF8 in the report; #F8FAFC on #FFFFFF in the app). Shadows are not in the vocabulary; a hover may deepen color, never cast.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Stability Rule",
+        "body": "Swiss Light surfaces do not animate in. By design, the first painted frame is the final state: no entrance transitions, no reveal effects, no scroll-driven movement. The only motion in the system is responsive state feedback (140ms ease-out on hover of buttons/links) and the reduced-motion kill switch (`@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }`, shipped in both shells). Stability here is an honesty signal: numbers first, presentation stable. The app world keeps the rule — its figures are server-rendered and its ApexCharts charts ship with animations disabled.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Only Float Rule",
+        "body": "In the app world exactly one thing floats: the dialog sheet, over a 40% Slate Ink scrim. It separates itself by the scrim and by focus — never by shadow, blur, or a lift.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set every money figure with `.tnum` (tabular numerals) in both worlds, so ledger columns align.",
+      "Do keep each surface in exactly one world (The Two-World Rule): welcome and auth extend Swiss Light; every signed-in page extends Swiss Minimal Light.",
+      "Do ration the accent per world: Fortuna Red only for response positions in Swiss Light; one blue thread (#2563EB) per region in the app, with green and red kept as state flags on data.",
+      "Do separate surfaces by drawing them: #EFEFED inside a frame, #E4E4E2 between frames, 1px #111111 above headings, 2px ink under the header (Swiss Light); 1px #E2E8F0 frames and #F1F5F9 inner rows (app). That’s the whole hierarchy toolkit in both worlds.",
+      "Do keep each world’s typographic habits: Archivo’s negative tracking (−0.02 to −0.035em) and `text-wrap: balance` on Swiss Light headline classes; Inter with 26px/600 tabular figure cards and one hierarchy step per role in the app.",
+      "Do keep the specimen table honest: label it \"SPECIMEN\" / \"Illustrative data\"; roadmap items go in the \"In later editions\" list as notices, never as shipped claims.",
+      "Do respect `prefers-reduced-motion` (both shells ship the kill switch: all transitions disabled) even if future motion is added.",
+      "Do build each signed-out page as one specimen sheet on the ground: caption tags, headline, deck, hairline field rows, one full-bleed accent submit, hairline footnote, one quiet cross-link below (The One Sheet Rule), and put each error in the field row it belongs to.",
+      "Do make app dialogs modal in behavior as well as looks: `role=\"dialog\"` + `aria-modal=\"true\"`, focus moved to the first field on open, Escape to close, Tab trapped inside, focus returned to the trigger — the shipped `layouts/app.blade.php` script is the contract.",
+      "Do cap the app meter fill at 100%: past the line, the red amount and the \"past the line\" note carry the excess, not a bar that overruns its track."
+    ],
+    "donts": [
+      "Don’t introduce `box-shadow`, `backdrop-filter`, gradient panels, or glass as a visible surface treatment anywhere; flat-with-frames is the committed vocabulary of both worlds, not an early-stage limitation. The only sanctioned `box-shadow` uses in the CSS are state and plumbing: `box-shadow: none` suppressions (both worlds), Chrome’s autofill white-inset repaint (both worlds), and the app field’s 3px `rgba(37,99,235,0.15)` focus ring — a focus state, never elevation.",
+      "Don’t round corners in the Swiss Light world: 0px radius everywhere; the scrollbar thumb’s 8px is chrome-only. And don’t sharpen the app world either — 8px controls and 12px surfaces are its language. Geometry never crosses worlds (The Two-World Rule).",
+      "Don’t add entrance or scroll animations to any surface: the first painted frame is the final state in both worlds, and the app’s chart animations stay disabled (The Flat Stability Rule).",
+      "Don’t use an accent on gray text, resting numerals, or decoration — in either world. Scarcity is what makes the one blue thread and the red flag read.",
+      "Don’t fabricate proof: no testimonials, no invented user counts, no benchmarks or guarantees; the specimen ledger table is the proof component.",
+      "Don’t add a second type family to a world: Archivo carries Swiss Light, Inter carries the app; data legibility comes from `.tnum`, not a mono face.",
+      "Don’t mix worlds on one page — no blue in the auth sheet, no Fortuna Red in the app, no rounded 12px cards in the report, no 0px corners in the app.",
+      "Don’t inherit the stock Breeze leftovers (`x-header`, `x-modal`, `x-nav-link`, the dropdowns, the starter buttons/inputs, `layouts/navigation.blade.php`): referenced by no view, styled by an older starter, scaffolding rather than precedent.",
+      "Don’t let semantic colors decorate the app: green marks income, red marks overshoots and errors, and neither marks anything else."
+    ]
+  }
+}

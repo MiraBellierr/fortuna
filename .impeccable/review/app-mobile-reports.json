@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-reports.png",
+  "dimensions": "390x844",
+  "origin": "Document slice capture (CDP Page.captureScreenshot, captureBeyondViewport, clip 390x844 CSS px at the top) of the served reports page at http://127.0.0.1:8000/reports as the signed-in user mira on a 390x844 mobile viewport - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile evidence for the reports page finish review; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>The Specimen Sheet — Fortuna register sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body {
+    background: #FAFAF8; color: #111111;
+    font: 400 16px/1.6 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 2px solid #111111; }
+  header .wrap { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .small-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+  .page { height: 756px; display: flex; flex-direction: column; align-items: center; padding-top: 96px; }
+  .sheet { width: 480px; background: #FFFFFF; border: 1px solid #E4E4E2; }
+  .cap { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 24px 12px; border-bottom: 1px solid #E4E4E2; }
+  .cap .small-label:last-child { color: #6E6E6E; }
+  .body { padding: 24px 24px 10px; }
+  h1 { font-size: 30px; line-height: 1.15; letter-spacing: -0.03em; font-weight: 700; }
+  .deck { margin-top: 12px; font-size: 15px; line-height: 1.7; color: #6E6E6E; }
+  .fields { margin-top: 22px; }
+  .f { padding: 13px 0 12px; border-bottom: 1px solid #EFEFED; }
+  .fields .f:last-child { border-bottom: 0; }
+  .f label { display: block; color: #6E6E6E; }
+  .f input { display: block; width: 100%; border: 0; background: transparent; outline: none; padding: 5px 0 0; font: 400 15px/1.4 'Archivo', sans-serif; color: #111111; }
+  .f input::placeholder { color: #B0B0AC; }
+  .go { display: block; width: 100%; border: 0; background: #E3000F; color: #FFFFFF; font: 600 15px 'Archivo', sans-serif; padding: 15px 0; cursor: pointer; }
+  .foot { padding: 12px 24px; border-top: 1px solid #E4E4E2; font-size: 12.5px; line-height: 1.5; color: #6E6E6E; }
+  .loginline { width: 480px; margin-top: 20px; font-size: 15px; font-weight: 500; color: #111111; text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: #C9C9C5; text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="wordmark">Fortuna</span>
+      <span class="small-label">Log in</span>
+    </div>
+  </header>
+  <main class="page">
+    <div class="sheet" aria-label="Create account">
+      <div class="cap"><span class="small-label">Fortuna</span><span class="small-label">New ledger</span></div>
+      <div class="body">
+        <h1>Start your ledger with your name.</h1>
+        <p class="deck">One honest ledger for one person &mdash; entries, receipts, and budgets under this account alone.</p>
+        <div class="fields">
+          <div class="f"><label class="small-label">Full name</label><input value="Aina binti Rahman"></div>
+          <div class="f"><label class="small-label">Email address</label><input value="aina@example.com"></div>
+          <div class="f"><label class="small-label">Password</label><input placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
+          <div class="f"><label class="small-label">Confirm password</label><input placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
+        </div>
+      </div>
+      <button class="go" type="button">Create your account</button>
+      <p class="foot">No plan, no card. Nothing is shared.</p>
+    </div>
+    <p class="loginline">Already keeping a ledger? Log in</p>
+  </main>
+</body>
+</html>

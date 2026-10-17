@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>The Colophon — Fortuna register sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body {
+    background: #FAFAF8; color: #111111;
+    font: 400 16px/1.6 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 2px solid #111111; }
+  header .wrap { height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { font-size: 24px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .small-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+  .page { max-width: 1152px; margin: 0 auto; padding: 0 24px; height: 756px; display: flex; flex-direction: column; }
+  .top { padding-top: 72px; max-width: 640px; }
+  h1 { font-size: 36px; line-height: 1.15; letter-spacing: -0.03em; font-weight: 700; }
+  .deck { margin-top: 18px; max-width: 54ch; font-size: 16.5px; line-height: 1.7; color: #6E6E6E; }
+  .spacer { flex: 1; }
+  .entry { max-width: 640px; padding-bottom: 34px; }
+  .f { padding-bottom: 24px; }
+  .f label { display: block; color: #6E6E6E; }
+  .f input { display: block; width: 100%; border: 0; border-bottom: 1px solid #C9C9C5; background: transparent; outline: none; padding: 8px 0; font: 400 16px/1.4 'Archivo', sans-serif; color: #111111; }
+  .f input::placeholder { color: #B0B0AC; }
+  .signrow { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #111111; padding-bottom: 22px; }
+  .btn { border: 0; background: #E3000F; color: #FFFFFF; font: 600 15px 'Archivo', sans-serif; padding: 14px 28px; cursor: pointer; }
+  .quiet { font-size: 15px; font-weight: 500; color: #111111; text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: #C9C9C5; text-underline-offset: 4px; }
+  footer { border-top: 1px solid #E4E4E2; }
+  footer .wrap { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+  footer .wordmark { font-size: 17.6px; }
+  footer .small-label { color: #6E6E6E; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="wordmark">Fortuna</span>
+      <span class="small-label">Log in</span>
+    </div>
+  </header>
+  <main class="page">
+    <div class="top">
+      <h1>Start your ledger with your name.</h1>
+      <p class="deck">Yours goes on the first page. Everything after it &mdash; entries, receipts, budgets &mdash; stays under this account alone.</p>
+    </div>
+    <div class="spacer"></div>
+    <div class="entry">
+      <div class="f"><label class="small-label">Full name</label><input value="Aina binti Rahman"></div>
+      <div class="f"><label class="small-label">Email address</label><input value="aina@example.com"></div>
+      <div class="f"><label class="small-label">Password</label><input placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
+      <div class="f"><label class="small-label">Confirm password</label><input placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"></div>
+      <div class="signrow">
+        <button class="btn" type="button">Create your account</button>
+        <span class="quiet">Already keeping a ledger? Log in</span>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span class="wordmark">Fortuna</span>
+      <span class="small-label">&copy; 2026 Fortuna &middot; Master Your Money</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-budgets-modal.png",
+  "dimensions": "1440x900",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the budgets page with the Set budget modal open (opened through the page own button handler) at http://127.0.0.1:8000/budgets as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Modal state evidence for the signed-in app family finish review; no generated art, no composited content. Re-captured 2026-10-17 after the .btn-block/.btn-danger-block width fix (calc(100% - 40px) so the block buttons span the card gutters).",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

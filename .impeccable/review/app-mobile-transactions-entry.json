@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-transactions-entry.png",
+  "dimensions": "780x1688",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 2, no clip) of the served transactions index with the New entry sheet open over the dimmed record list at http://127.0.0.1:8000/transactions as the signed-in user mira on a 390x844 mobile viewport (dpr 2) - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile expense-entry evidence for the Enhanced UX pass: the create sheet in one column (Type segmented picker, Category, Amount, Date, Description, Receipt), full-bleed Save entry, and the Cancel / Amounts in MYR foot; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 2,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

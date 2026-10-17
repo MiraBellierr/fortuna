@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-profile-lower.png",
+  "dimensions": "1440x900",
+  "origin": "Document slice capture (CDP Page.captureScreenshot, captureBeyondViewport, clip 1440x900 CSS px at the bottom of the page, deviceScaleFactor 1) of the served profile page showing the Password and Delete account cards at http://127.0.0.1:8000/profile as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Lower-page evidence for the signed-in app family finish review; no generated art, no composited content. Re-captured 2026-10-17 as a document slice (CDP captureBeyondViewport, clip 1440x900 at the page bottom) after the delete-trigger pass; the live viewport capture of this region returned a stale frame on the background tab.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

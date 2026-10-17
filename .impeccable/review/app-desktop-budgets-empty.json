@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-budgets-empty.png",
+  "dimensions": "1440x900",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the served budgets index for an empty month (December 2026) at http://127.0.0.1:8000/budgets?month=2026-12 as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Empty-state evidence for the signed-in app family finish review; no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

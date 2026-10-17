@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-transactions-empty.png",
+  "dimensions": "1440x900",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, no clip) of the served transactions index for a filter range with no records (Income, January 2027) at http://127.0.0.1:8000/transactions?type=Income&start_date=2027-01-01&end_date=2027-01-31 as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Empty-state evidence: the filter sheet with 'More filters - 2 active' auto-expanded, the '0 records matching these filters.' head, and the Records empty message with its Clear the filters link; no generated art, no composited content. Re-captured 2026-10-17 after the Enhanced UX search/filtering pass so the sheet shows the shipped Search / Type / Category / More filters / Order layout.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-delete-trigger-hover-closeup.png",
+  "dimensions": "1532x97 (clip 1094x69 CSS px at 1.4x)",
+  "origin": "Clipped closeup (CDP Page.captureScreenshot, captureBeyondViewport, clip around the control at scale 1.4) of the Delete account trigger in its hover state, applied by a real pointer hover (CDP Input.dispatchMouseEvent mouseMoved over the control; hover state verified in the page before the capture) on http://127.0.0.1:8000/profile as the signed-in user mira - Vite dev server, Chrome via browser-harness daemon (CDP). Danger-on-hover evidence for the signed-in app family finish review; no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1.4,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

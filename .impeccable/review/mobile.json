@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/mobile.png",
+  "dimensions": "390x844",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 1, mobile emulation 390x844, no clip) of the served login page at http://127.0.0.1:8000/login - Vite dev server, Chrome via browser-harness daemon (CDP). First-viewport evidence for the auth surface finish review; no generated art, no composited content. Re-captured 2026-10-17 after the copy punctuation pass (em dashes removed); same method and viewport.",
+  "viewport_css_px": 390,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Light shell styles in resources/views/layouts/guest.blade.php"
+}

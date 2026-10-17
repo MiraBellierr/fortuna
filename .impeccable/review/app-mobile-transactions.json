@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-mobile-transactions.png",
+  "dimensions": "780x1688",
+  "origin": "Viewport capture (CDP Page.captureScreenshot, deviceScaleFactor 2, no clip) of the served transactions index (first viewport) at http://127.0.0.1:8000/transactions as the signed-in user mira on a 390x844 mobile viewport (dpr 2) - Vite dev server, Chrome via browser-harness daemon (CDP). Mobile-layout evidence for the Enhanced UX pass: full-width Record a transaction button over the filter sheet stacked in one column with 16px field text, Order, Apply, and the records cap; no generated art, no composited content.",
+  "viewport_css_px": 390,
+  "scale": 2,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}

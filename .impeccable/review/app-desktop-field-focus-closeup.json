@@ -1,0 +1,9 @@
+{
+  "raster": ".impeccable/review/app-desktop-field-focus-closeup.png",
+  "dimensions": "1040x340 (clip 520x170 CSS px at 2x)",
+  "origin": "Clipped closeup (CDP Page.captureScreenshot, captureBeyondViewport, clip 520x170 CSS px at scale 2) of the Budget amount field in the Set budget modal at http://127.0.0.1:8000/budgets as the signed-in user mira, capturing its real focused style (focused by a real pointer click into the field while the document held focus after bringing the agent tab forward); no native spinner chrome on the number field - Vite dev server, Chrome via browser-harness daemon (CDP). Focus-ring and control-chrome evidence for the signed-in app family finish review; no generated art, no composited content.",
+  "viewport_css_px": 1440,
+  "scale": 1,
+  "captured_at": "2026-10-17",
+  "build": "Vite dev server: resources/css/app.css (Tailwind) + inline Swiss Minimal Light shell styles in resources/views/layouts/app.blade.php"
+}
