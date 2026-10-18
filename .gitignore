@@ -21,9 +21,11 @@
 /auth.json
 /boost.json
 /CLAUDE.md
+/DESIGN.md
 /docs/agents/
 /node_modules
 /opencode.json
+/PRODUCT.md
 /public/build
 /public/fonts-manifest.dev.json
 /public/hot
