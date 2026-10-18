@@ -112,7 +112,11 @@
                 <div class="flex items-baseline gap-4">
                     <span class="text-[13px] tnum text-[#64748B]">{{ $transactions->total() }} {{ Str::plural('entry', $transactions->total()) }}</span>
                     @if ($transactions->total() > 0)
-                        <a href="{{ route('transactions.export', $activeFilters) }}" class="text-[13px] font-medium text-[#64748B] hover:text-[#0F172A] transition-colors">Export CSV</a>
+                        <span class="inline-flex flex-col items-start gap-1">
+                            <a id="export-csv" href="{{ route('transactions.export', $activeFilters) }}" class="text-[13px] font-medium text-[#64748B] hover:text-[#0F172A] transition-colors" data-busy-label="Preparing…">Export CSV</a>
+                            <span id="export-csv-status" class="sr-only" role="status"></span>
+                            <p id="export-csv-error" class="hidden text-[12.5px] leading-[1.6] text-[#DC2626]" role="alert">The export could not be prepared. Reload the page and try again.</p>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -540,5 +544,20 @@
                 refresh();
             });
         })();
+    </script>
+
+    <script>
+        // Export CSV: progress in place, failure under the link (window.exportLinks).
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.exportLinks) {
+                return;
+            }
+
+            window.exportLinks.bind(document.getElementById('export-csv'), {
+                error: document.getElementById('export-csv-error'),
+                status: document.getElementById('export-csv-status'),
+                filename: 'fortuna-transactions.csv',
+            });
+        });
     </script>
 </x-app-layout>

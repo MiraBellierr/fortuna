@@ -11,7 +11,11 @@
                 Welcome back, {{ Auth::user()->name }}. {{ $monthName }}, as recorded so far.
             </p>
         </div>
-        <a href="{{ route('reports.monthly-summary') }}" class="text-[13px] font-medium text-[#64748B] hover:text-[#0F172A] transition-colors">Monthly summary (PDF)</a>
+        <span class="inline-flex flex-col items-start gap-1 sm:items-end">
+            <a id="monthly-summary-link" href="{{ route('reports.monthly-summary') }}" class="text-[13px] font-medium text-[#64748B] hover:text-[#0F172A] transition-colors" data-busy-label="Preparing…">Monthly summary (PDF)</a>
+            <span id="monthly-summary-status" class="sr-only" role="status"></span>
+            <p id="monthly-summary-error" class="hidden text-[12.5px] leading-[1.6] text-[#DC2626]" role="alert">The export could not be prepared. Reload the page and try again.</p>
+        </span>
     </div>
 
     {{-- Summary figures --}}
@@ -114,7 +118,7 @@
             <div class="sheet">
                 <div class="sheet-cap">
                     <h2 class="text-[15px] font-semibold">Spending trend</h2>
-                    <select id="trend-year" class="tnum cursor-pointer rounded-md border border-[#E2E8F0] bg-white px-2 py-1 text-[13px] text-[#334155] transition-colors hover:border-[#CBD5E1] focus:outline-none focus:border-[#2563EB] focus:ring-[3px] focus:ring-[#2563EB]/15" aria-label="Year for the spending trend">
+                    <select id="trend-year" class="tnum cursor-pointer rounded-md border border-[#E2E8F0] bg-white px-2 py-1 text-[13px] text-[#334155] transition-colors hover:border-[#CBD5E1] focus:outline-none focus:border-[#2563EB] focus:ring-[3px] focus:ring-[#2563EB]/15 disabled:cursor-default disabled:border-[#CBD5E1] disabled:text-[#94A3B8]" aria-label="Year for the spending trend">
                         @foreach ($years as $year)
                             <option value="{{ $year }}" @selected($year === (int) now()->format('Y'))>{{ $year }}</option>
                         @endforeach
@@ -122,7 +126,7 @@
                 </div>
                 <div class="p-5">
                     <div id="trend-chart" class="relative min-h-[300px]">
-                        <p class="absolute inset-0 z-10 flex items-center justify-center text-[13px] text-[#64748B]" data-loading>Loading the chart…</p>
+                        <x-chart-note class="absolute inset-0 z-10 flex items-center justify-center" />
                     </div>
                 </div>
                 <p class="sheet-foot">Income, spending, and the net line through each month. Amounts in MYR.</p>
@@ -135,7 +139,7 @@
                 </div>
                 <div class="p-5">
                     <div id="dist-chart" class="min-h-[300px]">
-                        <p class="py-24 text-center text-[13px] text-[#64748B]" data-loading>Loading the chart…</p>
+                        <x-chart-note class="py-24 text-center" />
                     </div>
                     <p id="dist-empty" class="hidden py-20 text-center text-[14px] leading-[1.6] text-[#64748B]">
                         No expenses recorded yet. The first expense you file appears here.
@@ -149,9 +153,11 @@
     @push('scripts')
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                if (!window.ApexCharts) {
+                if (!window.ApexCharts || !window.chartNotes) {
                     return;
                 }
+
+                var chartNotes = window.chartNotes;
 
                 var fontFamily = "'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif";
                 var axisLabelStyle = { colors: '#64748B', fontSize: '12px', fontFamily: fontFamily };
@@ -172,36 +178,47 @@
                     itemMargin: { horizontal: 12, vertical: 2 }
                 };
 
-                function clearLoading(element) {
-                    var note = element.querySelector('[data-loading]');
-                    if (note) {
-                        note.remove();
-                    }
-                }
-
                 function chartFailed(element) {
                     element.innerHTML = '<p class="py-24 text-center text-[13px] text-[#64748B]">The chart could not be loaded.</p>';
                 }
 
                 // Spending trend
                 var trendElement = document.getElementById('trend-chart');
-                var trendChart = new window.ApexCharts(trendElement, {
-                    chart: { type: 'line', height: 300, fontFamily: fontFamily, background: 'transparent', toolbar: { show: false }, zoom: { enabled: false }, animations: { enabled: false } },
-                    series: [],
-                    colors: ['#94A3B8', '#2563EB', '#64748B'],
-                    stroke: { curve: 'straight', width: 2, dashArray: [0, 0, 5] },
-                    grid: { borderColor: '#E2E8F0', strokeDashArray: 4, padding: { top: 8, right: 8, bottom: 0, left: 8 } },
-                    xaxis: { categories: [], labels: { style: axisLabelStyle }, axisBorder: { color: '#E2E8F0' }, axisTicks: { show: false } },
-                    yaxis: { labels: { style: axisLabelStyle, formatter: whole } },
-                    legend: legend,
-                    dataLabels: { enabled: false },
-                    markers: { size: 0, strokeWidth: 0, hover: { size: 4 } },
-                    tooltip: { theme: 'light', style: { fontFamily: fontFamily, fontSize: '12px' }, y: { formatter: money } }
-                });
-                trendChart.render();
-                // The loading note stays until the series land; an empty render alone is not "loaded".
+                var trendSelect = document.getElementById('trend-year');
+                var trendOptions = function () {
+                    return {
+                        chart: { type: 'line', height: 300, fontFamily: fontFamily, background: 'transparent', toolbar: { show: false }, zoom: { enabled: false }, animations: { enabled: false } },
+                        series: [],
+                        colors: ['#94A3B8', '#2563EB', '#64748B'],
+                        stroke: { curve: 'straight', width: 2, dashArray: [0, 0, 5] },
+                        grid: { borderColor: '#E2E8F0', strokeDashArray: 4, padding: { top: 8, right: 8, bottom: 0, left: 8 } },
+                        xaxis: { categories: [], labels: { style: axisLabelStyle }, axisBorder: { color: '#E2E8F0' }, axisTicks: { show: false } },
+                        yaxis: { labels: { style: axisLabelStyle, formatter: whole } },
+                        legend: legend,
+                        dataLabels: { enabled: false },
+                        markers: { size: 0, strokeWidth: 0, hover: { size: 4 } },
+                        tooltip: { theme: 'light', style: { fontFamily: fontFamily, fontSize: '12px' }, y: { formatter: money } }
+                    };
+                };
+                var trendChart = null;
+                var trendYearShown = null;
+                var trendEverLoaded = false;
+
+                chartNotes.bind(trendElement);
 
                 function loadTrend(year) {
+                    trendSelect.disabled = true;
+
+                    if (!trendChart) {
+                        // First load, or a retry after the first load failed.
+                        trendElement.innerHTML = '';
+                        trendChart = new window.ApexCharts(trendElement, trendOptions());
+                        trendChart.render();
+                    }
+
+                    // The loading note stays until the series land; an empty render alone is not "loaded".
+                    chartNotes.loading(trendElement, trendEverLoaded ? 'Updating ' + year + '…' : 'Loading the chart…');
+
                     fetch('/api/reports/monthly?year=' + encodeURIComponent(year), { headers: { 'Accept': 'application/json' } })
                         .then(function (response) {
                             if (!response.ok) {
@@ -212,22 +229,37 @@
                         .then(function (data) {
                             trendChart.updateOptions({ xaxis: { categories: data.chart_data.labels } }, false, false);
                             trendChart.updateSeries(data.chart_data.series);
-                            clearLoading(trendElement);
+                            trendYearShown = year;
+                            trendEverLoaded = true;
+                            chartNotes.clear(trendElement);
+                            trendSelect.disabled = false;
                         })
                         .catch(function () {
-                            trendChart.destroy();
-                            chartFailed(trendElement);
+                            trendSelect.disabled = false;
+
+                            if (trendEverLoaded) {
+                                // Keep the series already on screen; the note explains the gap.
+                                chartNotes.message(trendElement, "Couldn't load " + year + ' — still showing ' + trendYearShown + '.');
+                                trendSelect.value = String(trendYearShown);
+                            } else {
+                                chartNotes.clear(trendElement);
+                                trendChart.destroy();
+                                trendChart = null;
+                                chartFailed(trendElement);
+                            }
                         });
                 }
 
-                loadTrend(document.getElementById('trend-year').value);
+                loadTrend(trendSelect.value);
 
-                document.getElementById('trend-year').addEventListener('change', function () {
+                trendSelect.addEventListener('change', function () {
                     loadTrend(this.value);
                 });
 
                 // Expense distribution
                 var distElement = document.getElementById('dist-chart');
+                chartNotes.bind(distElement);
+                chartNotes.loading(distElement, 'Loading the chart…');
 
                 fetch('/api/reports/category-distribution', { headers: { 'Accept': 'application/json' } })
                     .then(function (response) {
@@ -238,6 +270,7 @@
                     })
                     .then(function (data) {
                         if (!data.chart_data.series || data.chart_data.series.length === 0) {
+                            chartNotes.clear(distElement);
                             distElement.classList.add('hidden');
                             document.getElementById('dist-empty').classList.remove('hidden');
                             return;
@@ -278,12 +311,28 @@
                             tooltip: { theme: 'light', style: { fontFamily: fontFamily, fontSize: '12px' }, y: { formatter: money } }
                         });
                         distChart.render();
-                        clearLoading(distElement);
+                        chartNotes.clear(distElement);
                     })
                     .catch(function () {
+                        chartNotes.clear(distElement);
                         document.getElementById('dist-empty').classList.add('hidden');
                         chartFailed(distElement);
                     });
+            });
+        </script>
+
+        <script>
+            // Monthly summary export: progress in place, failure under the link.
+            document.addEventListener('DOMContentLoaded', function () {
+                if (!window.exportLinks) {
+                    return;
+                }
+
+                window.exportLinks.bind(document.getElementById('monthly-summary-link'), {
+                    error: document.getElementById('monthly-summary-error'),
+                    status: document.getElementById('monthly-summary-status'),
+                    filename: 'fortuna-summary.pdf',
+                });
             });
         </script>
     @endpush

@@ -71,10 +71,47 @@
     - [x] Feature tests for Transaction CRUD
     - [x] Unit tests for Budget calculation logic
     - [x] Integration tests for Receipt uploads
-- [ ] **UI/UX Polish**
+- [x] **UI/UX Polish**
     - [x] Tailwind CSS refinements for a "Premium" financial look
     - [x] Form validation and user-friendly error messages
-    - [ ] Loading states for charts and exports
+    - [x] Loading states for charts and exports
 - [ ] **Final Deployment Prep**
     - [ ] Environment configuration audit
     - [ ] Database indexing for performance (on `user_id` and `transaction_date`)
+
+## 🏗️ Architecture Deepening
+
+_From the 2026-10-17 architecture review (candidate 1: "Give the budget check one module"). Plan agreed; not yet started._
+
+- [ ] **Budget check read module**
+    - [ ] One call on `Budget` — `checkFor($userId, $month)` — returns `{ lines, budgeted, spent, remaining }`
+    - [ ] Lines carry spent, remaining, percent_used (uncapped int; null when no amount), is_over; ordered overshoots-first, then hardest-run
+    - [ ] One grouped aggregate over transactions behind the call, replacing the three raw subqueries, the Eloquent variant, and the duplicated sort closures
+    - [ ] Unify "Budget remaining" on the plan's arithmetic (spent within budgeted lines) — dashboard and PDF adopt it
+- [ ] **Guarded write path for lines**
+    - [ ] Migration: dedupe existing duplicates (keep most recently updated), then unique index on (user_id, category_id, month)
+    - [ ] Create + change operations share one duplicate guard; duplicate → `ValidationException` (key `budget`)
+    - [ ] Web adapter maps to `back()->withErrors`; JSON adapter lets it bubble to 422
+- [ ] **Re-seat every call path on the module**
+    - [ ] `DashboardController` — raw subquery, sort closure, remaining formula
+    - [ ] `BudgetViewController` — raw subquery, sort closure, inline duplicate checks
+    - [ ] `MonthlySummaryController` — raw subquery, sort closure
+    - [ ] `BudgetAnalyticsController` — separate Eloquent aggregation
+    - [ ] `BudgetAlertController` — both methods; kills the all-time-sum overshoot bug
+    - [ ] Views read attributes only — percent math out of `dashboard.blade.php`, `budgets/index.blade.php`, `reports/monthly-summary.blade.php`
+- [ ] **Glossary**
+    - [ ] Create `GLOSSARY.md`: budget check, line, budget remaining (unified definition)
+- [ ] **Tests**
+    - [ ] Module test through the new seam (per-line math, totals, ordering)
+    - [ ] First dashboard feature test (remaining math changes; it has none today)
+    - [ ] First alerts-endpoint test (would catch the all-time-sum bug)
+    - [ ] Existing page/PDF tests stay untouched — they are the safety net
+- [ ] **Verification pass**
+    - [ ] `composer install` (lockfile only), create `database/database.sqlite`, `php artisan migrate`
+    - [ ] Run narrow tests, then the full suite; `vendor/bin/pint --dirty --format agent`
+
+**Deferred candidates from the same review** (each needs its own planning round before implementation):
+- [ ] Transaction payload + receipt lifecycle — one module over the Storage seam
+- [ ] One authorization seam — policies for transaction and budget, category lifecycle owned once
+- [ ] Report read models — one query, two adapters
+- [ ] Unreferenced JSON surface — delete or re-seat, per the mobile quick-entry plan

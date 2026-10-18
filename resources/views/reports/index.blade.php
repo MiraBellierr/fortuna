@@ -97,7 +97,7 @@
 
                 <div class="px-5 pb-2 pt-1">
                     <div id="year-flow-chart" class="relative min-h-[340px]">
-                        <p class="absolute inset-0 z-10 flex items-center justify-center text-[13px] text-[#64748B]" data-loading>Loading the chart…</p>
+                        <x-chart-note class="absolute inset-0 z-10 flex items-center justify-center" />
                     </div>
                 </div>
                 <p class="sheet-foot">Income and spending by month, with the net line through them. Amounts in MYR.</p>
@@ -342,10 +342,11 @@
         @push('scripts')
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                    if (!window.ApexCharts) {
+                    if (!window.ApexCharts || !window.chartNotes) {
                         return;
                     }
 
+                    var chartNotes = window.chartNotes;
                     var fontFamily = "'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif";
                     var axisLabelStyle = { colors: '#64748B', fontSize: '12px', fontFamily: fontFamily };
                     var money = function (value) {
@@ -361,12 +362,8 @@
                         return;
                     }
 
-                    function clearLoading(element) {
-                        var note = element.querySelector('[data-loading]');
-                        if (note) {
-                            note.remove();
-                        }
-                    }
+                    chartNotes.bind(flowElement);
+                    chartNotes.loading(flowElement, 'Loading the chart…');
 
                     function chartFailed(element) {
                         element.innerHTML = '<p class="py-24 text-center text-[13px] text-[#64748B]">The chart could not be loaded.</p>';
@@ -404,9 +401,10 @@
 
                             flowChart.updateOptions({ xaxis: { categories: data.chart_data.labels } }, false, false);
                             flowChart.updateSeries(series);
-                            clearLoading(flowElement);
+                            chartNotes.clear(flowElement);
                         })
                         .catch(function () {
+                            chartNotes.clear(flowElement);
                             flowChart.destroy();
                             chartFailed(flowElement);
                         });
